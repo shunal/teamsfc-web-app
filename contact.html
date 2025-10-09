@@ -290,6 +290,24 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #131c1d;
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 2px solid #e5d993;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 0.5rem 0;
+                text-align: center;
             }
 
             .mobile-menu {
