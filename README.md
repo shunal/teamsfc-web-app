@@ -65,7 +65,7 @@ Edit the download buttons in `index.html`:
 Edit the footer section with your actual social media URLs:
 ```html
 <li><a href="YOUR_INSTAGRAM_URL">Instagram</a></li>
-<li><a href="YOUR_TWITTER_URL">Twitter</a></li>
+<li><a href="YOUR_X_URL">X</a></li>
 ```
 
 ### Update Contact Information
