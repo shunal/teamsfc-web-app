@@ -49,12 +49,18 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-family: 'Arsenal SC', sans-serif;
-            font-weight: 700;
-            color: #e5d993;
-            text-decoration: none;
-            text-transform: lowercase;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            opacity: 0.8;
         }
 
         .nav-links {
@@ -90,33 +96,103 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Choice Section */
+        .choice-section {
             background: #304243;
-            color: white;
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
             text-align: center;
         }
 
-        .hero h1 {
+        .choice-title {
             font-size: 3.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
             color: #e5d993;
             text-transform: lowercase;
+            margin-bottom: 1rem;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .choice-subtitle {
+            font-size: 1.3rem;
+            color: white;
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 4rem;
             font-family: 'Arsenal SC', sans-serif;
-            font-weight: 400;
+        }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .choice-card {
+            background: #131c1d;
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            border: 3px solid transparent;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(229, 217, 147, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .choice-card:hover {
+            border-color: #e5d993;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(229, 217, 147, 0.2);
+        }
+
+        .choice-card:hover::before {
+            opacity: 1;
+        }
+
+        .choice-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .choice-card h2 {
+            font-size: 2.2rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: #e5d993;
+            text-transform: lowercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .choice-card p {
+            font-size: 1.1rem;
+            color: white;
+            line-height: 1.6;
+            font-family: 'Arsenal SC', sans-serif;
+            margin-bottom: 2rem;
+        }
+
+        .choice-arrow {
+            font-size: 2rem;
+            color: #e5d993;
+            font-weight: 700;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .choice-card:hover .choice-arrow {
+            transform: translateX(10px);
         }
 
         .cta-buttons {
@@ -160,7 +236,7 @@
 
         /* Features Section */
         .features {
-            padding: 80px 0;
+            padding: 120px 0 80px;
             background: #131c1d;
         }
 
@@ -381,11 +457,29 @@
                 display: flex;
             }
 
-            .hero h1 {
+            .choice-title {
                 font-size: 2.5rem;
             }
 
-            .hero p {
+            .choice-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .choice-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .choice-card {
+                padding: 3rem 2rem;
+            }
+
+            .choice-card h2 {
+                font-size: 1.8rem;
+            }
+
+            .choice-card p {
                 font-size: 1rem;
             }
 
@@ -433,12 +527,13 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="/" class="logo">teamsfc</a>
+            <a href="/" class="logo">
+                <img src="logo.png" alt="TeamsFC" class="logo-img">
+            </a>
             <ul class="nav-links">
-                <li><a href="#features">features</a></li>
-                <li><a href="#how-it-works">how it works</a></li>
-                <li><a href="coaching.html">coaching</a></li>
-                <li><a href="#download">download</a></li>
+                <li><a href="for-players.html">for players</a></li>
+                <li><a href="coaching.html">for coaches</a></li>
+                <li><a href="downloads.html">download</a></li>
                 <li><a href="contact.html">contact</a></li>
             </ul>
             <div class="mobile-menu">
@@ -449,14 +544,24 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Choice Section -->
+    <section class="choice-section">
         <div class="container">
-            <h1 class="fade-in-up">master your soccer skills</h1>
-            <p class="fade-in-up">Join thousands of players improving their game with personalized coaching, real challenges, and amazing prizes. Download the TEAMSFC app and start your journey to soccer excellence.</p>
-            <div class="cta-buttons fade-in-up">
-                <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" class="btn btn-primary" target="_blank" rel="noopener noreferrer">download app</a>
-                <a href="#features" class="btn btn-secondary">learn more</a>
+            <h1 class="choice-title">welcome to teamsfc</h1>
+            <p class="choice-subtitle">Choose your path to soccer excellence</p>
+            <div class="choice-grid">
+                <a href="for-players.html" class="choice-card player-card">
+                    <div class="choice-icon">⚽</div>
+                    <h2>for players</h2>
+                    <p>Improve your skills with personalized coaching, video feedback, and 170+ training challenges</p>
+                    <span class="choice-arrow">→</span>
+                </a>
+                <a href="coaching.html" class="choice-card coach-card">
+                    <div class="choice-icon">📋</div>
+                    <h2>for coaches</h2>
+                    <p>Build your coaching business, set your rates, and earn while helping players improve</p>
+                    <span class="choice-arrow">→</span>
+                </a>
             </div>
         </div>
     </section>
@@ -525,8 +630,7 @@
             <h2>ready to improve your game?</h2>
             <p>Join thousands of players already using TEAMSFC to master their soccer skills.</p>
             <div class="cta-buttons">
-                <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" class="btn btn-primary" target="_blank" rel="noopener noreferrer">download for ios</a>
-                <a href="#" class="btn btn-secondary">download for android</a>
+                <a href="downloads.html" class="btn btn-primary">download the app</a>
             </div>
         </div>
     </section>

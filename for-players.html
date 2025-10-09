@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching - TEAMSFC</title>
-    <meta name="description" content="Become a coach on TEAMSFC. Offer private or public coaching to soccer players and earn while helping them improve.">
+    <title>For Players - TEAMSFC</title>
+    <meta name="description" content="Join TEAMSFC as a player. Train with your team coach or get personalized coaching from public coaches.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -96,14 +96,14 @@
         }
 
         /* Hero Section */
-        .coaching-hero {
+        .player-hero {
             background: #304243;
             color: white;
             padding: 140px 0 80px;
             text-align: center;
         }
 
-        .coaching-hero h1 {
+        .player-hero h1 {
             font-size: 3.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
@@ -112,15 +112,15 @@
             text-transform: lowercase;
         }
 
-        .coaching-hero p {
-            font-size: 1.2rem;
+        .player-hero p {
+            font-size: 1.3rem;
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        /* Coaching Types Section */
-        .coaching-types {
+        /* Options Section */
+        .options-section {
             padding: 80px 0;
             background: #131c1d;
         }
@@ -130,38 +130,34 @@
             font-size: 2.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             color: #e5d993;
             text-transform: lowercase;
         }
 
-        .coaching-grid {
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+            opacity: 0.9;
+            margin-bottom: 4rem;
+        }
+
+        .options-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
 
-        .coaching-card {
+        .option-card {
             background: #304243;
             padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 2px solid #e5d993;
+            border-radius: 16px;
+            border: 3px solid #e5d993;
         }
 
-        .badge {
-            display: inline-block;
-            background: rgba(229, 217, 147, 0.2);
-            color: #e5d993;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .coaching-card h3 {
+        .option-card h3 {
             font-size: 2rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
@@ -170,38 +166,45 @@
             text-transform: lowercase;
         }
 
-        .coaching-card h4 {
+        .option-card h4 {
             font-size: 1.3rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
             color: #e5d993;
             text-transform: lowercase;
         }
 
-        .coaching-card p {
+        .option-card p {
             color: white;
             line-height: 1.8;
             margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
 
-        .coaching-card ul {
+        .option-card ul {
             list-style: none;
             padding-left: 0;
+            margin: 1.5rem 0;
         }
 
-        .coaching-card ul li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+        .option-card ul li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
             position: relative;
             color: white;
+            border-bottom: 1px solid rgba(229, 217, 147, 0.2);
         }
 
-        .coaching-card ul li:before {
+        .option-card ul li:before {
             content: "⚽";
             position: absolute;
             left: 0;
+        }
+
+        .option-card ul li:last-child {
+            border-bottom: none;
         }
 
         .highlight-box {
@@ -217,8 +220,19 @@
             font-weight: 700;
         }
 
-        /* How to Become a Coach */
-        .become-coach {
+        .badge {
+            display: inline-block;
+            background: rgba(229, 217, 147, 0.2);
+            color: #e5d993;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* How it Works */
+        .how-it-works {
             padding: 80px 0;
             background: #304243;
         }
@@ -271,60 +285,10 @@
             color: white;
         }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 80px 0;
-            background: #131c1d;
-        }
-
-        .pricing-box {
-            max-width: 800px;
-            margin: 3rem auto;
-            background: #304243;
-            padding: 3rem;
-            border-radius: 12px;
-            border: 2px solid #e5d993;
-        }
-
-        .pricing-box h4 {
-            font-size: 1.5rem;
-            font-family: 'Arsenal SC', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #e5d993;
-            text-transform: lowercase;
-        }
-
-        .pricing-box p {
-            color: white;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            margin: 1rem 0;
-            background: rgba(229, 217, 147, 0.1);
-            border-radius: 8px;
-        }
-
-        .pricing-item span:first-child {
-            font-weight: 700;
-        }
-
-        .pricing-item span:last-child {
-            color: #e5d993;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background: #304243;
+            background: #131c1d;
             text-align: center;
         }
 
@@ -344,7 +308,7 @@
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 15px 40px;
             border-radius: 10px;
             text-decoration: none;
             font-family: 'Arsenal SC', sans-serif;
@@ -354,6 +318,7 @@
             text-transform: lowercase;
             background: #e5d993;
             color: black;
+            font-size: 1.1rem;
         }
 
         .btn:hover {
@@ -441,7 +406,7 @@
                 display: flex;
             }
 
-            .coaching-hero h1 {
+            .player-hero h1 {
                 font-size: 2.5rem;
             }
 
@@ -449,7 +414,7 @@
                 font-size: 2rem;
             }
 
-            .coaching-grid {
+            .options-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -485,177 +450,116 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="coaching-hero">
+    <section class="player-hero">
         <div class="container">
-            <h1>become a coach</h1>
-            <p>Join our community of professional coaches and help players around the world improve their soccer skills. Set your own rates, manage your teams, and earn while making a difference.</p>
+            <h1>for players</h1>
+            <p>Choose how you want to train and improve your soccer skills with TEAMSFC</p>
         </div>
     </section>
 
-    <!-- Coaching Types -->
-    <section class="coaching-types">
+    <!-- Options Section -->
+    <section class="options-section">
         <div class="container">
-            <h2 class="section-title">coaching options</h2>
-            <div class="coaching-grid">
-                <div class="coaching-card">
+            <h2 class="section-title">two ways to get started</h2>
+            <p class="section-subtitle">Select the option that best fits your situation</p>
+            
+            <div class="options-grid">
+                <!-- Option 1: Team Coach -->
+                <div class="option-card">
                     <div class="badge">option 1</div>
-                    <h3>🔒 private coaching</h3>
-                    <p>Start your coaching journey with private coaching. Build your own teams and provide personalized training to your players.</p>
+                    <h3>👥 join your team</h3>
+                    <p>If your coach uses TEAMSFC, you can join your team using your unique team code.</p>
                     
-                    <h4>what is private coaching?</h4>
-                    <p>Private coaching allows you to create your own team and send invite codes to your players. This is the perfect option for coaches who already have a team or want to build one from scratch.</p>
+                    <h4>how to join</h4>
+                    <p>Get your team's unique code from your coach and enter it during registration. It's that simple!</p>
                     
-                    <h4>features:</h4>
+                    <div class="highlight-box">
+                        <p>🆓 Free Team Management Features</p>
+                    </div>
+                    
                     <ul>
-                        <li>Send team invite codes to your players</li>
-                        <li>Free team management features (chat, schedule)</li>
-                        <li>Set your own team fee rate</li>
-                        <li>Provide personalized training through the app</li>
-                        <li>Review player submissions and give feedback</li>
+                        <li><strong>Team Chat</strong> - Communicate with your coach and teammates</li>
+                        <li><strong>Schedule Access</strong> - Never miss a game or practice</li>
+                        <li><strong>Team Updates</strong> - Stay informed about everything team-related</li>
+                    </ul>
+                    
+                    <h4>upgrade to training</h4>
+                    <p>If your coach offers training through the app, you can subscribe to unlock:</p>
+                    
+                    <ul>
+                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
+                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
+                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
+                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
+                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
                     </ul>
                     
                     <div class="highlight-box">
-                        <p>💡 All coaches must start with private coaching before becoming a public coach.</p>
+                        <p>💡 Your coach sets the subscription rate. Payment is handled monthly through the app.</p>
                     </div>
                 </div>
 
-                <div class="coaching-card">
+                <!-- Option 2: Public Coach -->
+                <div class="option-card">
                     <div class="badge">option 2</div>
-                    <h3>🌍 public coaching</h3>
-                    <p>Expand your reach and coach players from around the world who aren't on a team using TeamsFC.</p>
+                    <h3>🎯 personal training</h3>
+                    <p>Don't have a team using TEAMSFC? Subscribe to a public coach for personalized one-on-one training.</p>
                     
-                    <h4>what is public coaching?</h4>
-                    <p>Public coaching allows individual players without a team to sign up under your coaching. These are players who want personalized training but aren't part of an organized team.</p>
+                    <h4>what you get</h4>
+                    <p>All the same powerful training features without the team element:</p>
                     
-                    <h4>requirements:</h4>
                     <ul>
-                        <li>Complete 50 reviews as a private coach first</li>
-                        <li>Maintain high coaching standards</li>
-                        <li>Pass additional verification</li>
-                    </ul>
-                    
-                    <h4>benefits:</h4>
-                    <ul>
-                        <li>Access to players actively seeking coaches</li>
-                        <li>Expand your coaching business</li>
-                        <li>Build your reputation on the platform</li>
-                        <li>Same pricing flexibility as private coaching</li>
+                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
+                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
+                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
+                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
+                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
                     </ul>
                     
                     <div class="highlight-box">
-                        <p>⭐ Public coaching requires 50 completed reviews to ensure quality service and platform understanding.</p>
+                        <p>⭐ Public coaches have completed 50+ reviews and are verified experts</p>
+                    </div>
+                    
+                    <h4>perfect for</h4>
+                    <ul>
+                        <li>Players whose teams don't use TEAMSFC</li>
+                        <li>Individual players seeking extra training</li>
+                        <li>Anyone wanting personalized coaching</li>
+                        <li>Players looking to improve specific skills</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <p>💡 Browse available public coaches in the app and choose based on their expertise, ratings, and pricing.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How to Become a Coach -->
-    <section class="become-coach">
+    <!-- How It Works -->
+    <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">how to become a coach</h2>
+            <h2 class="section-title">how training works</h2>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h4>download the app</h4>
-                    <p>Download the TEAMSFC app and sign up for a coach account. No signup fees required.</p>
+                    <h4>get assigned</h4>
+                    <p>Your coach assigns you a specific training exercise or challenge from the library</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h4>complete verification</h4>
-                    <p>Pass ID verification to ensure safety and authenticity for all users on the platform.</p>
+                    <h4>record & submit</h4>
+                    <p>Complete the exercise and record a 30-second video directly in the app</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h4>connect with stripe</h4>
-                    <p>Link your Stripe account through the app to receive payments securely and efficiently.</p>
+                    <h4>receive feedback</h4>
+                    <p>Your coach reviews your submission and provides detailed, personalized feedback</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h4>set your rates</h4>
-                    <p>Choose your team fee rate and start inviting players to join your private coaching.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing">
-        <div class="container">
-            <h2 class="section-title">pricing & earnings</h2>
-            <div class="pricing-box">
-                <h4>how it works</h4>
-                <p>As a coach, you have full control over your pricing. Set a team fee rate that works for you and your players.</p>
-                
-                <div class="pricing-item">
-                    <span>Coach signup fee</span>
-                    <span>FREE</span>
-                </div>
-                <div class="pricing-item">
-                    <span>Set your team fee rate</span>
-                    <span>You decide</span>
-                </div>
-                <div class="pricing-item">
-                    <span>TeamsFC service charge</span>
-                    <span>$10 per player</span>
-                </div>
-                
-                <h4 style="margin-top: 2rem;">what's included for players?</h4>
-                <p><strong>Free for all private team members:</strong></p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 0.5rem 0;">✓ Team chat functionality</li>
-                    <li style="padding: 0.5rem 0;">✓ Schedule management</li>
-                    <li style="padding: 0.5rem 0;">✓ Basic team features</li>
-                </ul>
-                
-                <p style="margin-top: 1.5rem;"><strong>Training through the app requires your team fee:</strong></p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 0.5rem 0;">✓ Video submission & review</li>
-                    <li style="padding: 0.5rem 0;">✓ Personalized feedback from you</li>
-                    <li style="padding: 0.5rem 0;">✓ Training assignments & challenges</li>
-                    <li style="padding: 0.5rem 0;">✓ Progress tracking</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Payment Structure -->
-    <section class="become-coach">
-        <div class="container">
-            <h2 class="section-title">how coaches get paid</h2>
-            <div class="pricing-box" style="margin-top: 0;">
-                <h4>payment schedule & structure</h4>
-                <p>We've designed our payment system to ensure quality service for players while providing fair compensation for coaches.</p>
-                
-                <div class="highlight-box" style="margin-top: 2rem;">
-                    <h4 style="margin: 0 0 1rem 0;">💳 monthly payment cycle</h4>
-                    <p style="margin: 0;">When a player subscribes to your coaching, you receive payment via Stripe <strong>after one month of service provided</strong>.</p>
-                </div>
-
-                <h4 style="margin-top: 2rem;">why monthly payments?</h4>
-                <p>This payment structure benefits both coaches and players:</p>
-                
-                <ul style="list-style: none; padding-left: 0; margin-top: 1.5rem;">
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(229, 217, 147, 0.2);">
-                        <strong style="color: #e5d993;">✓ Quality Assurance</strong><br>
-                        Ensures coaches provide complete, high-quality service throughout the month
-                    </li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(229, 217, 147, 0.2);">
-                        <strong style="color: #e5d993;">✓ Player Retention</strong><br>
-                        Encourages players to maintain their subscription for continued improvement
-                    </li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(229, 217, 147, 0.2);">
-                        <strong style="color: #e5d993;">✓ Secure Payments</strong><br>
-                        All payments processed securely through Stripe
-                    </li>
-                    <li style="padding: 0.8rem 0;">
-                        <strong style="color: #e5d993;">✓ Automatic Billing</strong><br>
-                        Recurring monthly payments handled automatically for retained players
-                    </li>
-                </ul>
-
-                <div class="highlight-box" style="margin-top: 2rem; background: rgba(229, 217, 147, 0.15);">
-                    <p style="margin: 0; text-align: center;"><strong>💡 Pro Tip:</strong> Provide consistent, valuable coaching to build long-term relationships with your players and ensure steady monthly income.</p>
+                    <h4>improve & repeat</h4>
+                    <p>Apply the feedback and get new assignments to continue your development</p>
                 </div>
             </div>
         </div>
@@ -664,8 +568,8 @@
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>ready to start coaching?</h2>
-            <p>Download the TEAMSFC app and begin your coaching journey today.</p>
+            <h2>ready to start training?</h2>
+            <p>Download the TEAMSFC app and begin your journey to soccer excellence</p>
             <a href="downloads.html" class="btn">download app</a>
         </div>
     </section>

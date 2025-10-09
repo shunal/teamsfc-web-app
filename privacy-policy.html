@@ -48,12 +48,18 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-family: 'Arsenal SC', sans-serif;
-            font-weight: 700;
-            color: #e5d993;
-            text-decoration: none;
-            text-transform: lowercase;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            opacity: 0.8;
         }
 
         .nav-links {
@@ -162,7 +168,9 @@
 <body>
     <header>
         <nav class="container">
-            <a href="/" class="logo">teamsfc</a>
+            <a href="/" class="logo">
+                <img src="logo.png" alt="TeamsFC" class="logo-img">
+            </a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/coaching.html">Coaching</a></li>

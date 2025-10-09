@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - TEAMSFC</title>
-    <meta name="description" content="Get in touch with TEAMSFC. We're here to help with any questions about our soccer training app.">
+    <title>Download TEAMSFC - iOS & Android App</title>
+    <meta name="description" content="Download the TEAMSFC app for iOS and Android. Start your soccer training journey today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -95,15 +95,15 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
-        .contact-hero {
+        /* Download Hero */
+        .download-hero {
             background: #304243;
             color: white;
             padding: 140px 0 80px;
             text-align: center;
         }
 
-        .contact-hero h1 {
+        .download-hero h1 {
             font-size: 3.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
@@ -112,132 +112,140 @@
             text-transform: lowercase;
         }
 
-        .contact-hero p {
-            font-size: 1.2rem;
+        .download-hero p {
+            font-size: 1.3rem;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
 
-        /* Contact Section */
-        .contact-section {
+        /* Download Options */
+        .download-options {
             padding: 80px 0;
             background: #131c1d;
         }
 
-        .contact-content {
-            max-width: 800px;
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .contact-form {
+        .download-card {
             background: #304243;
-            padding: 3rem;
-            border-radius: 12px;
-            border: 2px solid #e5d993;
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            border: 3px solid #e5d993;
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
-        .contact-form h3 {
-            font-size: 1.8rem;
-            font-family: 'Arsenal SC', sans-serif;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #e5d993;
-            text-transform: lowercase;
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(229, 217, 147, 0.3);
         }
 
-        .form-group {
+        .platform-icon {
+            font-size: 5rem;
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #e5d993;
+        .download-card h2 {
+            font-size: 2rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
+            color: #e5d993;
             text-transform: lowercase;
+            margin-bottom: 1rem;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e5d993;
-            border-radius: 8px;
-            background: #131c1d;
+        .download-card p {
             color: white;
-            font-family: 'Arsenal SC', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #d4c882;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
             background: #e5d993;
             color: black;
-            border: none;
             border-radius: 10px;
+            text-decoration: none;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
             font-size: 1.1rem;
             text-transform: lowercase;
-            cursor: pointer;
             transition: all 0.3s;
         }
 
-        .submit-btn:hover {
+        .download-btn:hover {
             background: #d4c882;
-            transform: translateY(-2px);
+            transform: scale(1.05);
         }
 
-        .submit-btn:disabled {
+        .download-btn.coming-soon {
             background: #666;
             cursor: not-allowed;
+        }
+
+        .download-btn.coming-soon:hover {
+            background: #666;
             transform: none;
         }
 
-        .contact-info {
-            margin-top: 3rem;
-            padding: 2rem;
+        .coming-soon-badge {
+            display: inline-block;
+            background: rgba(229, 217, 147, 0.2);
+            color: #e5d993;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Features Section */
+        .features-preview {
+            padding: 80px 0;
             background: #304243;
-            border-radius: 12px;
             text-align: center;
         }
 
-        .contact-info h3 {
-            font-size: 1.5rem;
+        .features-preview h2 {
+            font-size: 2.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            margin-bottom: 1rem;
             color: #e5d993;
             text-transform: lowercase;
+            margin-bottom: 3rem;
         }
 
-        .contact-info p {
+        .features-list {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(229, 217, 147, 0.1);
+            border-radius: 8px;
+        }
+
+        .feature-item span {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
             color: white;
-            line-height: 1.8;
-        }
-
-        .contact-info a {
-            color: #e5d993;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
         }
 
         /* Footer */
@@ -320,38 +328,26 @@
                 display: flex;
             }
 
-            .contact-hero h1 {
+            .download-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .contact-form {
-                padding: 2rem;
+            .download-hero p {
+                font-size: 1.1rem;
+            }
+
+            .download-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .download-card {
+                padding: 3rem 2rem;
             }
         }
 
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Success message */
-        .success-message {
-            display: none;
-            background: rgba(229, 217, 147, 0.2);
-            border: 2px solid #e5d993;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        .success-message p {
-            color: #e5d993;
-            font-weight: 700;
-            margin: 0;
         }
     </style>
 </head>
@@ -377,60 +373,60 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="contact-hero">
+    <section class="download-hero">
         <div class="container">
-            <h1>get in touch</h1>
-            <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            <h1>download teamsfc</h1>
+            <p>Get the app and start your journey to soccer excellence with personalized coaching and training</p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Download Options -->
+    <section class="download-options">
         <div class="container">
-            <div class="contact-content">
-                <div class="success-message" id="successMessage">
-                    <p>✓ Thank you for your message! We'll get back to you within 24 hours.</p>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="platform-icon">🍎</div>
+                    <h2>iOS</h2>
+                    <p>Available on the App Store for iPhone and iPad</p>
+                    <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" class="download-btn" target="_blank" rel="noopener noreferrer">download for ios</a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Requires iOS 15.1 or later</p>
                 </div>
 
-                <div class="contact-form">
-                    <h3>send us a message</h3>
-                    <!-- Formspree form - emails will go to steve@teamsfc.com -->
-                    <form id="contactForm" action="https://formspree.io/f/mrbyygya" method="POST">
-                        <div class="form-group">
-                            <label for="name">full name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">email address *</label>
-                            <input type="email" id="email" name="_replyto" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">subject *</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-
-                        <!-- Hidden field for success redirect -->
-                        <input type="hidden" name="_next" value="http://localhost:3000/contact.html?success=true">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission from TEAMSFC">
-                        <input type="hidden" name="_cc" value="steve@teamsfc.com">
-                        
-                        <button type="submit" class="submit-btn">send message</button>
-                    </form>
+                <div class="download-card">
+                    <div class="platform-icon">🤖</div>
+                    <h2>android</h2>
+                    <p>Coming soon to Google Play Store</p>
+                    <a href="#" class="download-btn coming-soon">coming soon</a>
+                    <div class="coming-soon-badge">android version in development</div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="contact-info">
-                    <h3>contact information</h3>
-                    <p>
-                        <strong>Email:</strong> <a href="mailto:steve@teamsfc.com">steve@teamsfc.com</a><br><br>
-                        <strong>Response Time:</strong> We typically respond within 24 hours
-                    </p>
+    <!-- Features Preview -->
+    <section class="features-preview">
+        <div class="container">
+            <h2>what you'll get</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <span>⚽</span>
+                    <p><strong>170+ Training Challenges</strong> - Master every aspect of your game with comprehensive drills</p>
+                </div>
+                <div class="feature-item">
+                    <span>📱</span>
+                    <p><strong>Video Feedback</strong> - Submit your videos and get personalized coaching feedback</p>
+                </div>
+                <div class="feature-item">
+                    <span>📊</span>
+                    <p><strong>Progress Tracking</strong> - Monitor your improvement with detailed analytics</p>
+                </div>
+                <div class="feature-item">
+                    <span>💬</span>
+                    <p><strong>Team Chat</strong> - Stay connected with your coach and teammates</p>
+                </div>
+                <div class="feature-item">
+                    <span>📅</span>
+                    <p><strong>Schedule Management</strong> - Never miss a practice or game</p>
                 </div>
             </div>
         </div>
@@ -479,27 +475,6 @@
     </footer>
 
     <script>
-        // Check for success parameter in URL
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === 'true') {
-            document.getElementById('successMessage').classList.add('show');
-            document.getElementById('contactForm').reset();
-            
-            // Remove success parameter from URL
-            window.history.replaceState({}, document.title, window.location.pathname);
-            
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        // Form submission handling
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', function(e) {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'sending...';
-        });
-
         // Mobile menu toggle
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
