@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Deep Link - Teams FC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #304243;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #131c1d;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .logo {
+            color: #e5d993;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .button {
+            background-color: #e5d993;
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 8px;
+            display: block;
+            width: 100%;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Teams FC</div>
+        <h2>Deep Link Test</h2>
+        <p>Click the button below to test if the deep link opens your app:</p>
+        
+        <button class="button" onclick="testDeepLink()">Test Deep Link</button>
+        <button class="button" onclick="testSimpleDeepLink()">Test Simple Deep Link</button>
+        <button class="button" onclick="testWithParams()">Test With Parameters</button>
+    </div>
+
+    <script>
+        function testDeepLink() {
+            const deepLink = 'teamsfc2://auth/reset-password';
+            console.log('Testing deep link:', deepLink);
+            
+            const link = document.createElement('a');
+            link.href = deepLink;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function testSimpleDeepLink() {
+            const deepLink = 'teamsfc2://';
+            console.log('Testing simple deep link:', deepLink);
+            
+            window.location.href = deepLink;
+        }
+
+        function testWithParams() {
+            const deepLink = 'teamsfc2://auth/reset-password?test=123&param=value';
+            console.log('Testing deep link with params:', deepLink);
+            
+            const link = document.createElement('a');
+            link.href = deepLink;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html> 

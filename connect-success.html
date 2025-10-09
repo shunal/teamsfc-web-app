@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Setup Complete - TEAMSFC</title>
+    <meta name="description" content="Your Stripe Connect account has been successfully set up. You're now ready to start earning as a coach on TEAMSFC.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arsenal SC', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: #304243;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .success-card {
+            background: #131c1d;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            border: 2px solid #e5d993;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #e5d993;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: black;
+        }
+
+        .success-card h1 {
+            font-size: 2.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #e5d993;
+            text-transform: lowercase;
+        }
+
+        .success-card p {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 0.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            text-transform: lowercase;
+        }
+
+        .btn-primary {
+            background: #e5d993;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: #d4c882;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e5d993;
+            border: 2px solid #e5d993;
+        }
+
+        .btn-secondary:hover {
+            background: #e5d993;
+            color: black;
+        }
+
+        .info-section {
+            background: #131c1d;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 2px solid #e5d993;
+        }
+
+        .info-section h3 {
+            color: #e5d993;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .info-section ul {
+            color: white;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        .info-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .verification-info {
+            background: #131c1d;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid #e5d993;
+        }
+
+        .verification-info h3 {
+            color: #e5d993;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .verification-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            background: #304243;
+            border-radius: 10px;
+            border-left: 4px solid #e5d993;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #e5d993;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: black;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            font-family: 'Arsenal SC', sans-serif;
+        }
+
+        .step-content h4 {
+            color: #e5d993;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .step-content p {
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .success-card {
+                padding: 2rem 1rem;
+            }
+            
+            .success-card h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .fade-in-up-delay-1 {
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-card fade-in-up">
+            <div class="success-icon">✓</div>
+            <h1>account setup started!</h1>
+            <p>great! your stripe connect account has been created successfully. you'll now complete all verification steps in one session to start earning as a coach on TEAMSFC.</p>
+            
+            <div style="margin: 2rem 0;">
+                <a href="https://teamsfc.com/" class="btn btn-primary">return to teamsfc</a>
+                <a href="https://teamsfc.com/contact.html" class="btn btn-secondary">contact support</a>
+            </div>
+        </div>
+
+        <div class="verification-info fade-in-up-delay-1">
+            <h3>verification process</h3>
+            <div class="verification-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>account created ✅</h4>
+                        <p>your stripe connect account has been created successfully</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>complete verification</h4>
+                        <p>provide ssn, upload id, and add bank account in one session</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>under review</h4>
+                        <p>your account goes under review for 1-2 business days</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>ready to earn</h4>
+                        <p>once approved, you can start accepting payments from players</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section fade-in-up">
+            <h3>what happens next</h3>
+            <ul>
+                <li>📋 complete identity verification (ssn, id upload)</li>
+                <li>🏦 add your bank account information</li>
+                <li>✅ submit all information in one session</li>
+                <li>⏳ account goes under review (1-2 business days)</li>
+                <li>📧 you'll be notified when verification is complete</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive feedback
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a subtle pulse animation to the success icon
+            const icon = document.querySelector('.success-icon');
+            icon.style.animation = 'fadeInUp 0.6s ease-out, pulse 2s infinite';
+            
+            // Add pulse keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html> 

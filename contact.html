@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TEAMSFC</title>
+    <meta name="description" content="Get in touch with the TEAMSFC team. We're here to help with any questions about our soccer training app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arsenal SC', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background-color: #304243;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #131c1d;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #e5d993;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: #e5d993;
+            text-decoration: none;
+            text-transform: lowercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e5d993;
+        }
+
+        /* Contact Section */
+        .contact-hero {
+            background: #304243;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #e5d993;
+            text-transform: lowercase;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            padding: 80px 0;
+            background: #131c1d;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: #304243;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+        }
+
+        .contact-info:hover {
+            border-color: #e5d993;
+        }
+
+        .contact-info h3 {
+            color: #e5d993;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: white;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        .contact-form {
+            background: #304243;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+        }
+
+        .contact-form:hover {
+            border-color: #e5d993;
+        }
+
+        .contact-form h3 {
+            color: #e5d993;
+            margin-bottom: 1.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #e5d993;
+            font-family: 'Arsenal SC', sans-serif;
+            text-transform: lowercase;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #3d5455;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: #131c1d;
+            color: white;
+            font-family: 'Arsenal SC', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #e5d993;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select option {
+            background: #131c1d;
+            color: white;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Arsenal SC', sans-serif;
+            text-transform: lowercase;
+        }
+
+        .btn-primary {
+            background: #e5d993;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: #d4c882;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: #304243;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #e5d993;
+            text-transform: lowercase;
+        }
+
+        .faq-item {
+            background: #131c1d;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .faq-item:hover {
+            border-color: #e5d993;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: #304243;
+            cursor: pointer;
+            font-weight: 700;
+            color: #e5d993;
+            transition: background 0.3s;
+            font-family: 'Arsenal SC', sans-serif;
+            text-transform: lowercase;
+        }
+
+        .faq-question:hover {
+            background: #232f34;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: white;
+            display: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #131c1d;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #e5d993;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #e5d993;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #e5d993;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3d5455;
+            padding-top: 2rem;
+            color: #bfbfbf;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-container {
+                padding: 0 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">teamsfc</a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">features</a></li>
+                <li><a href="index.html#how-it-works">how it works</a></li>
+                <li><a href="index.html#testimonials">testimonials</a></li>
+                <li><a href="index.html#download">download</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="fade-in-up">get in touch</h1>
+            <p class="fade-in-up">Have questions about TEAMSFC? We're here to help! Reach out to our team for support, feedback, or partnership opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-in-up">
+                        <h3>contact information</h3>
+                        <p><strong>email:</strong><br>support@teamsfc.com</p>
+                        <p><strong>business hours:</strong><br>monday - friday: 9am - 6pm est</p>
+                        <p><strong>response time:</strong><br>we typically respond within 24 hours</p>
+                        
+                        <h3 style="margin-top: 2rem;">follow us</h3>
+                        <p>stay updated with the latest news and tips:</p>
+                        <p>📱 instagram: @teamsfc<br>
+                        🐦 twitter: @teamsfc<br>
+                        📘 facebook: /teamsfc</p>
+                    </div>
+                    
+                    <div class="contact-form fade-in-up">
+                        <h3>send us a message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">full name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">email address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">select a topic</option>
+                                    <option value="general">general inquiry</option>
+                                    <option value="support">technical support</option>
+                                    <option value="feedback">app feedback</option>
+                                    <option value="partnership">partnership</option>
+                                    <option value="coaching">coaching opportunities</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">message *</label>
+                                <textarea id="message" name="message" required placeholder="tell us how we can help you..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">send message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">frequently asked questions</h2>
+            <div class="faq-container">
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        how do i get started with teamsfc?
+                    </div>
+                    <div class="faq-answer">
+                        download the TEAMSFC app from the app store or google play store, create your profile, and start with our beginner challenges. our system will automatically assess your skill level and provide personalized training recommendations.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        is teamsfc suitable for all skill levels?
+                    </div>
+                    <div class="faq-answer">
+                        yes! TEAMSFC is designed for players of all skill levels, from beginners to advanced players. our adaptive system provides challenges and feedback appropriate for your current level.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        how do the prizes and rewards work?
+                    </div>
+                    <div class="faq-answer">
+                        complete challenges and evaluations to earn points and unlock rewards. top performers can win real prizes, exclusive avatars, and recognition on our leaderboards.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        can coaches join the platform?
+                    </div>
+                    <div class="faq-answer">
+                        absolutely! we welcome qualified coaches to join our platform. coaches can earn income by providing evaluations and personalized feedback to players. contact us for more information about coach registration.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        is my data secure?
+                    </div>
+                    <div class="faq-answer">
+                        yes, we take data security seriously. all personal information and video content are encrypted and stored securely. we never share your data with third parties without your explicit consent.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>teamsfc</h3>
+                    <p>empowering soccer players to reach their full potential through technology and expert coaching.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>features</h3>
+                    <ul>
+                        <li><a href="index.html#features">personalized training</a></li>
+                        <li><a href="index.html#features">video evaluations</a></li>
+                        <li><a href="index.html#features">skill challenges</a></li>
+                        <li><a href="index.html#features">team competitions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>support</h3>
+                    <ul>
+                        <li><a href="contact.html">contact us</a></li>
+                        <li><a href="#">help center</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">terms of service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>connect</h3>
+                    <ul>
+                        <li><a href="#">instagram</a></li>
+                        <li><a href="#">twitter</a></li>
+                        <li><a href="#">facebook</a></li>
+                        <li><a href="#">youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TEAMSFC. all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            // For now, we'll just show a success message
+            alert('thank you for your message! we\'ll get back to you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(19, 28, 29, 0.95)';
+            } else {
+                header.style.background = '#131c1d';
+            }
+        });
+    </script>
+</body>
+</html> 

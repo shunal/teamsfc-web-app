@@ -1,0 +1,13 @@
+{
+  "name": "teamsfc2-reset-password",
+  "version": "1.0.0",
+  "description": "Password reset redirect page for Teams FC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+} 
