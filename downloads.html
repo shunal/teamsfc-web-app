@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download TEAMSFC - iOS & Android App</title>
     <meta name="description" content="Download the TEAMSFC app for iOS and Android. Start your soccer training journey today.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -140,6 +146,10 @@
             border: 3px solid #e5d993;
             text-align: center;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
         }
 
         .download-card:hover {
@@ -148,8 +158,19 @@
         }
 
         .platform-icon {
-            font-size: 5rem;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .platform-icon img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .platform-icon img:hover {
+            transform: scale(1.05);
         }
 
         .download-card h2 {
@@ -180,6 +201,10 @@
             font-size: 1.1rem;
             text-transform: lowercase;
             transition: all 0.3s;
+            height: 60px;
+            line-height: 30px;
+            box-sizing: border-box;
+            margin-top: 1rem;
         }
 
         .download-btn:hover {
@@ -205,6 +230,11 @@
             border-radius: 20px;
             font-size: 0.9rem;
             margin-top: 1rem;
+        }
+
+        .download-bottom {
+            margin-top: auto;
+            padding-top: 2rem;
         }
 
         /* Features Section */
@@ -385,19 +415,31 @@
         <div class="container">
             <div class="download-grid">
                 <div class="download-card">
-                    <div class="platform-icon">🍎</div>
-                    <h2>iOS</h2>
-                    <p>Available on the App Store for iPhone and iPad</p>
-                    <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" class="download-btn" target="_blank" rel="noopener noreferrer">download for ios</a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Requires iOS 15.1 or later</p>
+                    <div>
+                        <div class="platform-icon">
+                            <img src="png-apple-logo-9730.png" alt="Apple iOS" style="height: 80px; width: auto;">
+                        </div>
+                        <h2>iOS</h2>
+                        <p>Available on the App Store for iPhone and iPad</p>
+                    </div>
+                    <div class="download-bottom">
+                        <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" target="_blank" rel="noopener noreferrer">
+                            <img src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" style="height: 60px; width: auto;">
+                        </a>
+                    </div>
                 </div>
 
                 <div class="download-card">
-                    <div class="platform-icon">🤖</div>
-                    <h2>android</h2>
-                    <p>Coming soon to Google Play Store</p>
-                    <a href="#" class="download-btn coming-soon">coming soon</a>
-                    <div class="coming-soon-badge">android version in development</div>
+                    <div>
+                        <div class="platform-icon">
+                            <img src="android-head_flat.png" alt="Android" style="height: 80px; width: auto;">
+                        </div>
+                        <h2>android</h2>
+                        <p>Coming soon to Google Play Store</p>
+                    </div>
+                    <div class="download-bottom">
+                        <a href="#" class="download-btn coming-soon">coming soon</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -452,7 +494,7 @@
                 <div class="footer-section">
                     <h3>support</h3>
                     <ul>
-                        <li><a href="#">help center</a></li>
+                        <li><a href="contact.html">help center</a></li>
                         <li><a href="contact.html">contact us</a></li>
                         <li><a href="privacy-policy.html">privacy policy</a></li>
                         <li><a href="terms-of-service.html">terms of service</a></li>
@@ -461,10 +503,9 @@
                 <div class="footer-section">
                     <h3>connect</h3>
                     <ul>
-                        <li><a href="#">instagram</a></li>
-                        <li><a href="#">x</a></li>
-                        <li><a href="#">facebook</a></li>
-                        <li><a href="#">youtube</a></li>
+                        <li><a href="https://www.instagram.com/teamsfcapp/" target="_blank" rel="noopener noreferrer">instagram</a></li>
+                        <li><a href="https://x.com/teamsfcapp" target="_blank" rel="noopener noreferrer">x</a></li>
+                        <li><a href="https://www.tiktok.com/@teamsfcapp" target="_blank" rel="noopener noreferrer">tiktok</a></li>
                     </ul>
                 </div>
             </div>

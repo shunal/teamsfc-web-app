@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamsFC Business Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .business-card {
+            width: 3.5in;
+            height: 2in;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-front {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #304243 0%, #131c1d 100%);
+            color: white;
+        }
+
+        .card-back {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            color: #304243;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .qr-code img {
+            border-radius: 4px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .back-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #304243;
+        }
+
+        .download-info {
+            font-size: 12px;
+            margin-bottom: 12px;
+            color: #666;
+        }
+
+        .platforms {
+            font-size: 11px;
+            font-weight: 500;
+            color: #304243;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .website {
+            font-weight: 600;
+            color: #304243;
+        }
+
+        .social {
+            color: #e5d993;
+            font-weight: 500;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .business-card {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                width: 3.5in !important;
+                height: 2in !important;
+            }
+
+            .instructions {
+                display: none;
+            }
+
+            @page {
+                size: 3.5in 2in;
+                margin: 0;
+            }
+        }
+
+        /* Instructions */
+        .instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructions h2 {
+            color: #304243;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .instructions p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            color: #666;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card">
+        <div class="card-front">
+            <div class="logo-container">
+                <img src="logo.png" alt="TeamsFC Logo" class="logo-img">
+            </div>
+            <div class="qr-code">
+                <img src="qr-code.png" alt="QR Code - Download TeamsFC App">
+            </div>
+        </div>
+    </div>
+
+    <div class="business-card">
+        <div class="card-back">
+            <div class="back-title">Download the App</div>
+            <div class="download-info">Professional soccer training platform</div>
+            <div class="platforms">Available on iOS & Android</div>
+            <div class="contact-info">
+                <div class="website">teamsfc.com</div>
+                <div class="social">@teamsfcapp</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>TeamsFC Business Card</h2>
+        <p><strong>Front Side:</strong> Features your logo, company name, and QR code for easy app download.</p>
+        <p><strong>Back Side:</strong> Contains download information and contact details.</p>
+        
+        <h3>How to Use:</h3>
+        <ul>
+            <li><strong>Print at Home:</strong> Print on cardstock (3.5" x 2") and cut out</li>
+            <li><strong>Professional Printing:</strong> Save as PDF and send to printing service</li>
+            <li><strong>Digital Sharing:</strong> Use in emails or social media</li>
+        </ul>
+
+        <h3>QR Code:</h3>
+        <p>✅ <strong>Local Development:</strong> QR code links to localhost:3000/downloads.html</p>
+        <p>✅ <strong>Production:</strong> Use qr-code-production.png for teamsfc.com/downloads.html</p>
+        <p>People can scan the QR code to instantly access your app download page.</p>
+        
+        <h3>Print Settings:</h3>
+        <ul>
+            <li>Size: 3.5" x 2" (standard business card)</li>
+            <li>Paper: Cardstock or premium paper</li>
+            <li>Print both sides for complete card</li>
+        </ul>
+    </div>
+
+    <script>
+        // Generate QR code (placeholder for now)
+        // In a real implementation, you would use a QR code library
+        console.log('QR Code should link to: ' + window.location.origin + '/downloads.html');
+    </script>
+</body>
+</html>
