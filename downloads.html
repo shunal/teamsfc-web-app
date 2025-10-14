@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download TEAMSFC - iOS & Android App</title>
-    <meta name="description" content="Download the TEAMSFC app for iOS and Android. Start your soccer training journey today.">
+    <title>Download TEAMS FC - iOS & Android App</title>
+    <meta name="description" content="Download the TEAMS FC app for iOS and Android. Start your soccer training journey today.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -143,7 +143,6 @@
             background: #304243;
             padding: 4rem 3rem;
             border-radius: 16px;
-            border: 3px solid #e5d993;
             text-align: center;
             transition: all 0.3s ease;
             display: flex;
@@ -253,29 +252,42 @@
             margin-bottom: 3rem;
         }
 
-        .features-list {
-            max-width: 700px;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
             margin: 0 auto;
-            text-align: left;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
+        .feature-card {
+            background: #131c1d;
+            border: 1px solid rgba(229, 217, 147, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(229, 217, 147, 0.3);
+            background: #1a2526;
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e5d993;
             margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: rgba(229, 217, 147, 0.1);
-            border-radius: 8px;
+            font-family: 'Arsenal SC', sans-serif;
         }
 
-        .feature-item span {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .feature-item p {
-            font-size: 1.1rem;
+        .feature-card p {
             color: white;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* Footer */
@@ -432,10 +444,12 @@
                 <div class="download-card">
                     <div>
                         <div class="platform-icon">
-                            <img src="android-head_flat.png" alt="Android" style="height: 80px; width: auto;">
+                            <img src="android-head_flat.png" alt="Android" style="height: 65px; width: auto;">
                         </div>
-                        <h2>android</h2>
-                        <p>Coming soon to Google Play Store</p>
+                        <div style="margin-top: 15px;">
+                            <h2>android</h2>
+                            <p>Coming soon to Google Play Store</p>
+                        </div>
                     </div>
                     <div class="download-bottom">
                         <a href="#" class="download-btn coming-soon">coming soon</a>
@@ -449,26 +463,30 @@
     <section class="features-preview">
         <div class="container">
             <h2>what you'll get</h2>
-            <div class="features-list">
-                <div class="feature-item">
-                    <span>⚽</span>
-                    <p><strong>170+ Training Challenges</strong> - Master every aspect of your game with comprehensive drills</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>170+ Training Challenges</h3>
+                    <p>Master every aspect of your game with comprehensive drills</p>
                 </div>
-                <div class="feature-item">
-                    <span>📱</span>
-                    <p><strong>Video Feedback</strong> - Submit your videos and get personalized coaching feedback</p>
+                <div class="feature-card">
+                    <h3>Video Feedback</h3>
+                    <p>Submit your videos and get personalized coaching feedback</p>
                 </div>
-                <div class="feature-item">
-                    <span>📊</span>
-                    <p><strong>Progress Tracking</strong> - Monitor your improvement with detailed analytics</p>
+                <div class="feature-card">
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement with detailed analytics</p>
                 </div>
-                <div class="feature-item">
-                    <span>💬</span>
-                    <p><strong>Team Chat</strong> - Stay connected with your coach and teammates</p>
+                <div class="feature-card">
+                    <h3>Team Chat</h3>
+                    <p>Stay connected with your coach and teammates</p>
                 </div>
-                <div class="feature-item">
-                    <span>📅</span>
-                    <p><strong>Schedule Management</strong> - Never miss a practice or game</p>
+                <div class="feature-card">
+                    <h3>Schedule Management</h3>
+                    <p>Never miss a practice or game</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Skill Assessments</h3>
+                    <p>Regular evaluations to track your development and identify areas for improvement</p>
                 </div>
             </div>
         </div>
@@ -494,7 +512,6 @@
                 <div class="footer-section">
                     <h3>support</h3>
                     <ul>
-                        <li><a href="contact.html">help center</a></li>
                         <li><a href="contact.html">contact us</a></li>
                         <li><a href="privacy-policy.html">privacy policy</a></li>
                         <li><a href="terms-of-service.html">terms of service</a></li>
@@ -510,7 +527,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TEAMSFC. All rights reserved.</p>
+                <p>&copy; 2025 TEAMS FC. All rights reserved.</p>
             </div>
         </div>
     </footer>

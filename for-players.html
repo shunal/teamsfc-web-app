@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Players - TEAMSFC</title>
-    <meta name="description" content="Join TEAMSFC as a player. Train with your team coach or get personalized coaching from public coaches.">
+    <title>For Players - TEAMS FC</title>
+    <meta name="description" content="Join TEAMS FC as a player. Train with your team coach or get personalized coaching from public coaches.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -160,7 +160,6 @@
             background: #304243;
             padding: 3rem;
             border-radius: 16px;
-            border: 3px solid #e5d993;
         }
 
         .option-card h3 {
@@ -204,7 +203,7 @@
         }
 
         .option-card ul li:before {
-            content: "⚽";
+            content: "•";
             position: absolute;
             left: 0;
         }
@@ -214,16 +213,22 @@
         }
 
         .highlight-box {
-            background: rgba(229, 217, 147, 0.1);
-            border-left: 4px solid #e5d993;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
+            background: linear-gradient(135deg, rgba(229, 217, 147, 0.12) 0%, rgba(229, 217, 147, 0.06) 100%);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(229, 217, 147, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
         }
 
         .highlight-box p {
             margin: 0;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
         }
 
         .badge {
@@ -239,8 +244,22 @@
 
         /* How it Works */
         .how-it-works {
-            padding: 80px 0;
+            padding: 80px 0 60px 0;
             background: #304243;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            background: #304243;
+            padding: 20px 0;
+        }
+
+        .divider-line {
+            height: 1px;
+            background: #e5d993;
+            /* background: linear-gradient(90deg, transparent 0%, rgba(229, 217, 147, 0.3) 20%, rgba(229, 217, 147, 0.6) 50%, rgba(229, 217, 147, 0.3) 80%, transparent 100%); */
+            /* max-width: 400px; */
+            margin: 0 auto;
         }
 
         .steps-grid {
@@ -260,7 +279,7 @@
         }
 
         .step-card:hover {
-            border-color: #e5d993;
+            border-color: transparent;
         }
 
         .step-number {
@@ -294,7 +313,7 @@
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background: #131c1d;
+            background: #304243;
             text-align: center;
         }
 
@@ -455,93 +474,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="player-hero">
-        <div class="container">
-            <h1>for players</h1>
-            <p>Choose how you want to train and improve your soccer skills with TEAMSFC</p>
-        </div>
-    </section>
-
-    <!-- Options Section -->
-    <section class="options-section">
-        <div class="container">
-            <h2 class="section-title">two ways to get started</h2>
-            <p class="section-subtitle">Select the option that best fits your situation</p>
-            
-            <div class="options-grid">
-                <!-- Option 1: Team Coach -->
-                <div class="option-card">
-                    <div class="badge">option 1</div>
-                    <h3>👥 join your team</h3>
-                    <p>If your coach uses TEAMSFC, you can join your team using your unique team code.</p>
-                    
-                    <h4>how to join</h4>
-                    <p>Get your team's unique code from your coach and enter it during registration. It's that simple!</p>
-                    
-                    <div class="highlight-box">
-                        <p>🆓 Free Team Management Features</p>
-                    </div>
-                    
-                    <ul>
-                        <li><strong>Team Chat</strong> - Communicate with your coach and teammates</li>
-                        <li><strong>Schedule Access</strong> - Never miss a game or practice</li>
-                        <li><strong>Team Updates</strong> - Stay informed about everything team-related</li>
-                    </ul>
-                    
-                    <h4>upgrade to training</h4>
-                    <p>If your coach offers training through the app, you can subscribe to unlock:</p>
-                    
-                    <ul>
-                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
-                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
-                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
-                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
-                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <p>💡 Your coach sets the subscription rate. Payment is handled monthly through the app.</p>
-                    </div>
-                </div>
-
-                <!-- Option 2: Public Coach -->
-                <div class="option-card">
-                    <div class="badge">option 2</div>
-                    <h3>🎯 personal training</h3>
-                    <p>Don't have a team using TEAMSFC? Subscribe to a public coach for personalized one-on-one training.</p>
-                    
-                    <h4>what you get</h4>
-                    <p>All the same powerful training features without the team element:</p>
-                    
-                    <ul>
-                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
-                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
-                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
-                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
-                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <p>⭐ Public coaches have completed 50+ reviews and are verified experts</p>
-                    </div>
-                    
-                    <h4>perfect for</h4>
-                    <ul>
-                        <li>Players whose teams don't use TEAMSFC</li>
-                        <li>Individual players seeking extra training</li>
-                        <li>Anyone wanting personalized coaching</li>
-                        <li>Players looking to improve specific skills</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <p>💡 Browse available public coaches in the app and choose based on their expertise, ratings, and pricing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
@@ -564,8 +496,83 @@
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h4>improve & repeat</h4>
-                    <p>Apply the feedback and get new assignments to continue your development</p>
+                    <h4>master techniques</h4>
+                    <p>Use your coach's feedback to perfect each skill before moving forward</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+
+    <!-- Options Section -->
+    <section class="options-section">
+        <div class="container">
+            <h2 class="section-title">two ways to get started</h2>
+            <p class="section-subtitle">Select the option that best fits your situation</p>
+            
+            <div class="options-grid">
+                <!-- Option 1: Team Coach -->
+                <div class="option-card">
+                    <div class="badge">option 1</div>
+                    <h3>join your team</h3>
+                    <p>If your coach uses TEAMS FC, you can join your team using your unique team code.</p>
+                    
+                    <h4>how to join</h4>
+                    <p>Get your team's unique code from your coach and enter it during registration. It's that simple!</p>
+                    
+                    <h4>free team management features</h4>
+                    <ul>
+                        <li><strong>Team Chat</strong> - Communicate with your coach and teammates</li>
+                        <li><strong>Schedule Access</strong> - Never miss a game or practice</li>
+                        <li><strong>Team Updates</strong> - Stay informed about everything team-related</li>
+                    </ul>
+                    
+                    <h4>upgrade to training</h4>
+                    <p>If your coach offers training through the app, you can subscribe to unlock:</p>
+                    
+                    <ul>
+                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
+                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
+                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
+                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
+                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
+                    </ul>
+                    
+                    <h4>payment details</h4>
+                    <p>Your coach sets the subscription rate. Payment is handled monthly through the app.</p>
+                </div>
+
+                <!-- Option 2: Public Coach -->
+                <div class="option-card">
+                    <div class="badge">option 2</div>
+                    <h3>personal training</h3>
+                    <p>Don't have a team using TEAMS FC? Subscribe to a public coach for personalized one-on-one training.</p>
+                    
+                    <h4>what you get</h4>
+                    <p>All the same powerful training features without the team element:</p>
+                    
+                    <ul>
+                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
+                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
+                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
+                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
+                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
+                    </ul>
+                    
+                    <h4>verified expertise</h4>
+                    <p>Public coaches have completed 50+ reviews and are verified experts</p>
+                    
+                    <h4>perfect for</h4>
+                    <ul>
+                        <li>Players whose teams don't use TEAMS FC</li>
+                        <li>Individual players seeking extra training</li>
+                        <li>Anyone wanting personalized coaching</li>
+                        <li>Players looking to improve specific skills</li>
+                    </ul>
+                    
+                    <h4>how to choose</h4>
+                    <p>Browse available public coaches in the app and choose based on their expertise, ratings, and pricing.</p>
                 </div>
             </div>
         </div>
@@ -575,7 +582,7 @@
     <section class="cta-section">
         <div class="container">
             <h2>ready to start training?</h2>
-            <p>Download the TEAMSFC app and begin your journey to soccer excellence</p>
+            <p>Download the TEAMS FC app and begin your journey to soccer excellence</p>
             <a href="downloads.html" class="btn">download app</a>
         </div>
     </section>
@@ -600,7 +607,6 @@
                 <div class="footer-section">
                     <h3>support</h3>
                     <ul>
-                        <li><a href="contact.html">help center</a></li>
                         <li><a href="contact.html">contact us</a></li>
                         <li><a href="privacy-policy.html">privacy policy</a></li>
                         <li><a href="terms-of-service.html">terms of service</a></li>
@@ -616,7 +622,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TEAMSFC. All rights reserved.</p>
+                <p>&copy; 2025 TEAMS FC. All rights reserved.</p>
             </div>
         </div>
     </footer>

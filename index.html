@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEAMSFC - Soccer Skills Training App</title>
-    <meta name="description" content="Improve your soccer skills with personalized coaching, challenges, and real prizes. Download the TEAMSFC app today!">
+    <title>TEAMS FC - Soccer Skills Training App</title>
+    <meta name="description" content="Improve your soccer skills with personalized coaching, challenges, and real prizes. Download the TEAMS FC app today!">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -167,9 +167,17 @@
             opacity: 1;
         }
 
-        .choice-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+        .choice-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .card-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .choice-card h2 {
@@ -178,7 +186,24 @@
             font-weight: 700;
             color: #e5d993;
             text-transform: lowercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(229, 217, 147, 0.2);
+        }
+
+        .card-label {
+            font-size: 0.85rem;
+            color: #d4c882;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .choice-card p {
@@ -557,16 +582,24 @@
             <p class="choice-subtitle">Choose your path to soccer excellence</p>
             <div class="choice-grid">
                 <a href="for-players.html" class="choice-card player-card">
-                    <div class="choice-icon">⚽</div>
-                    <h2>for players</h2>
-                    <p>Improve your skills with personalized coaching, video feedback, and 170+ training challenges</p>
-                    <span class="choice-arrow">→</span>
+                    <div class="card-content">
+                        <h2>for players</h2>
+                        <p>Improve your skills with personalized coaching, video feedback, and 170+ training challenges</p>
+                        <div class="card-footer">
+                            <span class="card-label">training & development</span>
+                            <span class="choice-arrow">→</span>
+                        </div>
+                    </div>
                 </a>
                 <a href="coaching.html" class="choice-card coach-card">
-                    <div class="choice-icon">📋</div>
-                    <h2>for coaches</h2>
-                    <p>Build your coaching business, set your rates, and earn while helping players improve</p>
-                    <span class="choice-arrow">→</span>
+                    <div class="card-content">
+                        <h2>for coaches</h2>
+                        <p>Build your coaching business, set your rates, and earn while helping players improve</p>
+                        <div class="card-footer">
+                            <span class="card-label">business & earning</span>
+                            <span class="choice-arrow">→</span>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -609,7 +642,7 @@
                 <div class="step fade-in-up">
                     <div class="step-number">1</div>
                     <h3>download & sign up</h3>
-                    <p>Get the TEAMSFC app and create your profile to start your soccer journey.</p>
+                    <p>Get the TEAMS FC app and create your profile to start your soccer journey.</p>
                 </div>
                 <div class="step fade-in-up test">
                     <div class="step-number">2</div>
@@ -623,23 +656,13 @@
                 </div>
                 <div class="step fade-in-up">
                     <div class="step-number">4</div>
-                    <h3>win prizes & compete</h3>
-                    <p>Earn rewards, unlock achievements, and compete with friends and other players.</p>
+                    <h3>team features</h3>
+                    <p>Chat with teammates, view schedules, and stay connected with your team.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="download">
-        <div class="container">
-            <h2>ready to improve your game?</h2>
-            <p>Join thousands of players already using TEAMSFC to master their soccer skills.</p>
-            <div class="cta-buttons">
-                <a href="downloads.html" class="btn btn-primary">download the app</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
@@ -661,7 +684,6 @@
                 <div class="footer-section">
                     <h3>support</h3>
                     <ul>
-                        <li><a href="contact.html">help center</a></li>
                         <li><a href="contact.html">contact us</a></li>
                         <li><a href="privacy-policy.html">privacy policy</a></li>
                         <li><a href="terms-of-service.html">terms of service</a></li>
@@ -677,7 +699,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TEAMSFC. All rights reserved.</p>
+                <p>&copy; 2025 TEAMS FC. All rights reserved.</p>
             </div>
         </div>
     </footer>

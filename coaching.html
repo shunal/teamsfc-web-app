@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching - TEAMSFC</title>
-    <meta name="description" content="Become a coach on TEAMSFC. Offer private or public coaching to soccer players and earn while helping them improve.">
+    <title>Coaching - TEAMS FC</title>
+    <meta name="description" content="Become a coach on TEAMS FC. Offer private or public coaching to soccer players and earn while helping them improve.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -153,7 +153,6 @@
             padding: 3rem;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 2px solid #e5d993;
         }
 
         .badge {
@@ -205,17 +204,20 @@
         }
 
         .coaching-card ul li:before {
-            content: "⚽";
+            content: "•";
             position: absolute;
             left: 0;
         }
 
         .highlight-box {
-            background: rgba(229, 217, 147, 0.1);
-            border-left: 4px solid #e5d993;
+            background: rgba(229, 217, 147, 0.08);
+            border: 2px solid rgba(229, 217, 147, 0.4);
             padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
+            margin: 2rem 0;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(229, 217, 147, 0.1);
+            position: relative;
         }
 
         .highlight-box p {
@@ -225,8 +227,26 @@
 
         /* How to Become a Coach */
         .become-coach {
-            padding: 80px 0;
+            padding: 80px 0 60px 0;
             background: #304243;
+        }
+
+        /* Payment Structure */
+        .payment-structure {
+            padding: 80px 0;
+            background: #131c1d;
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            background: #131c1d;
+            padding: 20px 0;
+        }
+
+        .divider-line {
+            height: 1px;
+            background: #e5d993;
+            margin: 0 auto;
         }
 
         .steps-grid {
@@ -246,7 +266,7 @@
         }
 
         .step-card:hover {
-            border-color: #e5d993;
+            border-color: transparent;
         }
 
         .step-number {
@@ -280,16 +300,19 @@
         /* Pricing Section */
         .pricing {
             padding: 80px 0;
-            background: #131c1d;
+            background: #304243;
         }
 
         .pricing-box {
             max-width: 800px;
             margin: 3rem auto;
-            background: #304243;
+            background: #131c1d;
             padding: 3rem;
             border-radius: 12px;
-            border: 2px solid #e5d993;
+        }
+
+        .payment-structure .pricing-box {
+            background: #304243;
         }
 
         .pricing-box h4 {
@@ -311,20 +334,31 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem;
-            margin: 1rem 0;
-            background: rgba(229, 217, 147, 0.1);
+            padding: 1.2rem 1.5rem;
+            margin: 0.8rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(229, 217, 147, 0.15);
             border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-item:hover {
+            border-color: rgba(229, 217, 147, 0.3);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .pricing-item span:first-child {
-            font-weight: 700;
+            font-weight: 600;
+            color: white;
+            font-size: 1.1rem;
+            text-transform: capitalize;
         }
 
         .pricing-item span:last-child {
             color: #e5d993;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
         }
 
         /* CTA Section */
@@ -491,10 +525,32 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="coaching-hero">
+    <!-- How to Become a Coach -->
+    <section class="become-coach">
         <div class="container">
-            <h1>become a coach</h1>
-            <p>Join our community of professional coaches and help players around the world improve their soccer skills. Set your own rates, manage your teams, and earn while making a difference.</p>
+            <h2 class="section-title">how to become a coach</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>download the app</h4>
+                    <p>Download the TEAMS FC app and sign up for a coach account. No signup fees required.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>complete verification</h4>
+                    <p>Pass ID verification to ensure safety and authenticity for all users on the platform.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>connect with stripe</h4>
+                    <p>Link your Stripe account through the app to receive payments securely and efficiently.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>set your rates</h4>
+                    <p>Choose your team fee rate and start inviting players to join your private coaching.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -505,7 +561,7 @@
             <div class="coaching-grid">
                 <div class="coaching-card">
                     <div class="badge">option 1</div>
-                    <h3>🔒 private coaching</h3>
+                    <h3>private coaching</h3>
                     <p>Start your coaching journey with private coaching. Build your own teams and provide personalized training to your players.</p>
                     
                     <h4>what is private coaching?</h4>
@@ -520,14 +576,12 @@
                         <li>Review player submissions and give feedback</li>
                     </ul>
                     
-                    <div class="highlight-box">
-                        <p>💡 All coaches must start with private coaching before becoming a public coach.</p>
-                    </div>
+                    <p style="color: #e5d993; font-weight: 700; margin: 1.5rem 0; text-align: center; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.9rem;">All coaches must start with private coaching before becoming a public coach.</p>
                 </div>
 
                 <div class="coaching-card">
                     <div class="badge">option 2</div>
-                    <h3>🌍 public coaching</h3>
+                    <h3>public coaching</h3>
                     <p>Expand your reach and coach players from around the world who aren't on a team using TeamsFC.</p>
                     
                     <h4>what is public coaching?</h4>
@@ -548,38 +602,7 @@
                         <li>Same pricing flexibility as private coaching</li>
                     </ul>
                     
-                    <div class="highlight-box">
-                        <p>⭐ Public coaching requires 50 completed reviews to ensure quality service and platform understanding.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Become a Coach -->
-    <section class="become-coach">
-        <div class="container">
-            <h2 class="section-title">how to become a coach</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h4>download the app</h4>
-                    <p>Download the TEAMSFC app and sign up for a coach account. No signup fees required.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h4>complete verification</h4>
-                    <p>Pass ID verification to ensure safety and authenticity for all users on the platform.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h4>connect with stripe</h4>
-                    <p>Link your Stripe account through the app to receive payments securely and efficiently.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h4>set your rates</h4>
-                    <p>Choose your team fee rate and start inviting players to join your private coaching.</p>
+                    <p style="color: #e5d993; font-weight: 700; margin: 1.5rem 0; text-align: center; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.9rem;">Public coaching requires 50 completed reviews to ensure quality service and platform understanding.</p>
                 </div>
             </div>
         </div>
@@ -626,16 +649,16 @@
     </section>
 
     <!-- Payment Structure -->
-    <section class="become-coach">
+    <section class="payment-structure">
         <div class="container">
             <h2 class="section-title">how coaches get paid</h2>
             <div class="pricing-box" style="margin-top: 0;">
                 <h4>payment schedule & structure</h4>
                 <p>We've designed our payment system to ensure quality service for players while providing fair compensation for coaches.</p>
                 
-                <div class="highlight-box" style="margin-top: 2rem;">
-                    <h4 style="margin: 0 0 1rem 0;">💳 monthly payment cycle</h4>
-                    <p style="margin: 0;">When a player subscribes to your coaching, you receive payment via Stripe <strong>after one month of service provided</strong>.</p>
+                <div style="margin-top: 2rem;">
+                    <h4 style="margin: 0 0 1rem 0; color: #e5d993;">monthly payment cycle</h4>
+                    <p style="margin: 0; color: white;">When a player subscribes to your coaching, you receive payment via Stripe after one month of service provided.</p>
                 </div>
 
                 <h4 style="margin-top: 2rem;">why monthly payments?</h4>
@@ -660,9 +683,7 @@
                     </li>
                 </ul>
 
-                <div class="highlight-box" style="margin-top: 2rem; background: rgba(229, 217, 147, 0.15);">
-                    <p style="margin: 0; text-align: center;"><strong>💡 Pro Tip:</strong> Provide consistent, valuable coaching to build long-term relationships with your players and ensure steady monthly income.</p>
-                </div>
+                <p style="margin: 2rem 0; text-align: center; color: #e5d993; font-weight: 700;"><strong>Pro Tip:</strong> Provide consistent, valuable coaching to build long-term relationships with your players and ensure steady monthly income.</p>
             </div>
         </div>
     </section>
@@ -671,7 +692,7 @@
     <section class="cta-section">
         <div class="container">
             <h2>ready to start coaching?</h2>
-            <p>Download the TEAMSFC app and begin your coaching journey today.</p>
+            <p>Download the TEAMS FC app and begin your coaching journey today.</p>
             <a href="downloads.html" class="btn">download app</a>
         </div>
     </section>
@@ -696,7 +717,6 @@
                 <div class="footer-section">
                     <h3>support</h3>
                     <ul>
-                        <li><a href="contact.html">help center</a></li>
                         <li><a href="contact.html">contact us</a></li>
                         <li><a href="privacy-policy.html">privacy policy</a></li>
                         <li><a href="terms-of-service.html">terms of service</a></li>
@@ -712,7 +732,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TEAMSFC. All rights reserved.</p>
+                <p>&copy; 2025 TEAMS FC. All rights reserved.</p>
             </div>
         </div>
     </footer>

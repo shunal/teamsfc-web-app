@@ -13,7 +13,7 @@ Your contact page is ready! All form submissions will be sent to **steve@teamsfc
 ### Step 2: Create a New Form
 
 1. In your Formspree dashboard, click "New Project" or "+ New Form"
-2. Give it a name like "TEAMSFC Contact Form"
+2. Give it a name like "TEAMS FC Contact Form"
 3. Formspree will generate a unique Form ID (looks like: `xwkgybqr`)
 
 ### Step 3: Update contact.html
