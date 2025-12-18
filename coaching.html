@@ -236,6 +236,49 @@
             padding: 80px 0;
             background: #131c1d;
         }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .payment-card {
+            background: #304243;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(229, 217, 147, 0.15);
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229, 217, 147, 0.3);
+            background: #3d5254;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .payment-card h3 {
+            font-size: 1.4rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #e5d993;
+            text-transform: lowercase;
+        }
+
+        .payment-card p {
+            color: white;
+            line-height: 1.7;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            margin: 0;
+        }
         
         /* Section Divider */
         .section-divider {
@@ -303,62 +346,114 @@
             background: #304243;
         }
 
-        .pricing-box {
-            max-width: 800px;
-            margin: 3rem auto;
-            background: #131c1d;
-            padding: 3rem;
-            border-radius: 12px;
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .payment-structure .pricing-box {
-            background: #304243;
+        .pricing-overview {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .pricing-box h4 {
-            font-size: 1.5rem;
+        .pricing-overview h3 {
+            font-size: 2rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            margin-bottom: 1.5rem;
             color: #e5d993;
+            margin-bottom: 1rem;
             text-transform: lowercase;
         }
 
-        .pricing-box p {
-            color: white;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 1.5rem;
-            margin: 0.8rem 0;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(229, 217, 147, 0.15);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-item:hover {
-            border-color: rgba(229, 217, 147, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .pricing-item span:first-child {
-            font-weight: 600;
+        .pricing-overview p {
             color: white;
             font-size: 1.1rem;
-            text-transform: capitalize;
+            margin: 0;
         }
 
-        .pricing-item span:last-child {
-            color: #e5d993;
+        .pricing-table, .features-table {
+            margin-bottom: 3rem;
+        }
+
+        .features-table h4 {
+            font-size: 1.5rem;
+            font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            font-size: 1.3rem;
-            letter-spacing: 0.5px;
+            color: #e5d993;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: lowercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #131c1d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        thead {
+            background: #1a2526;
+        }
+
+        th {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: #e5d993;
+            text-transform: lowercase;
+            font-size: 1.1rem;
+            border-bottom: 2px solid rgba(229, 217, 147, 0.2);
+        }
+
+        td {
+            padding: 1.2rem 1rem;
+            color: white;
+            font-family: 'Arsenal SC', sans-serif;
+            border-bottom: 1px solid rgba(229, 217, 147, 0.1);
+        }
+
+        tbody tr:hover {
+            background: rgba(229, 217, 147, 0.05);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:first-child {
+            font-weight: 600;
+        }
+
+        td:nth-child(2) {
+            font-weight: 700;
+            color: #e5d993;
+            text-align: center;
+        }
+
+        td:last-child {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .features-table td:nth-child(2),
+        .features-table td:nth-child(3) {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .features-table td:nth-child(2) {
+            color: #4ade80;
+        }
+
+        .features-table td:nth-child(3) {
+            color: #4ade80;
+        }
+
+        .features-table .cross {
+            color: #ef4444 !important;
         }
 
         /* CTA Section */
@@ -514,6 +609,7 @@
                 <li><a href="for-players.html">for players</a></li>
                 <li><a href="coaching.html">for coaches</a></li>
                 <li><a href="downloads.html">download</a></li>
+                <li><a href="pricing.html">pricing</a></li>
                 <li><a href="contact.html">contact</a></li>
             </ul>
             <div class="mobile-menu">
@@ -612,38 +708,95 @@
     <section class="pricing">
         <div class="container">
             <h2 class="section-title">pricing & earnings</h2>
-            <div class="pricing-box">
-                <h4>how it works</h4>
-                <p>As a coach, you have full control over your pricing. Set a team fee rate that works for you and your players.</p>
-                
-                <div class="pricing-item">
-                    <span>Coach signup fee</span>
-                    <span>FREE</span>
-                </div>
-                <div class="pricing-item">
-                    <span>Set your team fee rate</span>
-                    <span>You decide</span>
-                </div>
-                <div class="pricing-item">
-                    <span>TeamsFC service charge</span>
-                    <span>$10 per player</span>
+            <div class="pricing-container">
+                <div class="pricing-overview">
+                    <h3>pricing structure</h3>
+                    <p>Transparent pricing with no hidden fees</p>
                 </div>
                 
-                <h4 style="margin-top: 2rem;">what's included for players?</h4>
-                <p><strong>Free for all private team members:</strong></p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 0.5rem 0;">✓ Team chat functionality</li>
-                    <li style="padding: 0.5rem 0;">✓ Schedule management</li>
-                    <li style="padding: 0.5rem 0;">✓ Basic team features</li>
-                </ul>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>service</th>
+                                <th>cost</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Coach Signup</td>
+                                <td>FREE</td>
+                                <td>No upfront costs to start coaching</td>
+                            </tr>
+                            <tr>
+                                <td>Your Team Fee</td>
+                                <td>You Set</td>
+                                <td>Set rates that work for your market</td>
+                            </tr>
+                            <tr>
+                                <td>Platform Service</td>
+                                <td>$10/player</td>
+                                <td>Small fee per player for platform access</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
-                <p style="margin-top: 1.5rem;"><strong>Training through the app requires your team fee:</strong></p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 0.5rem 0;">✓ Video submission & review</li>
-                    <li style="padding: 0.5rem 0;">✓ Personalized feedback from you</li>
-                    <li style="padding: 0.5rem 0;">✓ Training assignments & challenges</li>
-                    <li style="padding: 0.5rem 0;">✓ Progress tracking</li>
-                </ul>
+                <div class="features-table">
+                    <h4>what's included</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>feature</th>
+                                <th>free tier</th>
+                                <th>with team fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Team Chat & Communication</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Schedule Management</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Basic Team Features</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Video Submission & Review</td>
+                                <td><span class="cross">✗</span></td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Personalized Coaching Feedback</td>
+                                <td><span class="cross">✗</span></td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Training Assignments</td>
+                                <td><span class="cross">✗</span></td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Progress Tracking</td>
+                                <td><span class="cross">✗</span></td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>170+ Training Challenges</td>
+                                <td><span class="cross">✗</span></td>
+                                <td>✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -652,38 +805,19 @@
     <section class="payment-structure">
         <div class="container">
             <h2 class="section-title">how coaches get paid</h2>
-            <div class="pricing-box" style="margin-top: 0;">
-                <h4>payment schedule & structure</h4>
-                <p>We've designed our payment system to ensure quality service for players while providing fair compensation for coaches.</p>
-                
-                <div style="margin-top: 2rem;">
-                    <h4 style="margin: 0 0 1rem 0; color: #e5d993;">monthly payment cycle</h4>
-                    <p style="margin: 0; color: white;">When a player subscribes to your coaching, you receive payment via Stripe after one month of service provided.</p>
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <h3>monthly payments</h3>
+                    <p>Receive payment via Stripe after one month of service provided to ensure quality coaching.</p>
                 </div>
-
-                <h4 style="margin-top: 2rem;">why monthly payments?</h4>
-                <p>This payment structure benefits both coaches and players:</p>
-                
-                <ul style="list-style: none; padding-left: 0; margin-top: 1.5rem;">
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(229, 217, 147, 0.2);">
-                        <strong style="color: #e5d993;">✓ Quality Assurance</strong><br>
-                        Ensures coaches provide complete, high-quality service throughout the month
-                    </li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(229, 217, 147, 0.2);">
-                        <strong style="color: #e5d993;">✓ Player Retention</strong><br>
-                        Encourages players to maintain their subscription for continued improvement
-                    </li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(229, 217, 147, 0.2);">
-                        <strong style="color: #e5d993;">✓ Secure Payments</strong><br>
-                        All payments processed securely through Stripe
-                    </li>
-                    <li style="padding: 0.8rem 0;">
-                        <strong style="color: #e5d993;">✓ Automatic Billing</strong><br>
-                        Recurring monthly payments handled automatically for retained players
-                    </li>
-                </ul>
-
-                <p style="margin: 2rem 0; text-align: center; color: #e5d993; font-weight: 700;"><strong>Pro Tip:</strong> Provide consistent, valuable coaching to build long-term relationships with your players and ensure steady monthly income.</p>
+                <div class="payment-card">
+                    <h3>secure processing</h3>
+                    <p>All payments are processed securely through Stripe with automatic billing for retained players.</p>
+                </div>
+                <div class="payment-card">
+                    <h3>steady income</h3>
+                    <p>Build long-term relationships with players for consistent monthly revenue streams.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -702,7 +836,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>teamsfc</h3>
+                    <h3>teams fc</h3>
                     <p>Empowering soccer players to reach their full potential through technology and expert coaching.</p>
                 </div>
                 <div class="footer-section">

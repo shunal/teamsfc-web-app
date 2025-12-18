@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAMS FC - Train to Play</title>
+    <meta name="description" content="The only app that combines real-world soccer training with competitive gaming. Complete challenges, earn cards, build decks, and compete on leaderboards.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arsenal SC', sans-serif;
+            line-height: 1.6;
+            color: white;
+            background-color: #304243;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #131c1d;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #e5d993;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e5d993;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #e5d993;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(19, 28, 29, 0.5);
+            z-index: 1;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-app-logo {
+            margin-bottom: 3rem;
+        }
+
+        .hero-app-logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: white;
+            text-transform: lowercase;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-taglines {
+            font-size: 4.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: white;
+            text-transform: lowercase;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .hero-cta-link {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            color: white;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .hero-cta-link:hover {
+            color: #e5d993;
+        }
+
+        .hero-cta-link::after {
+            content: '→';
+            font-size: 1.2rem;
+        }
+
+        .hero-download-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            
+            margin-left: 0px;
+        }
+
+        .hero-download-button {
+            display: inline-block;
+            height: 45px;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-download-button:hover {
+            opacity: 0.8;
+        }
+
+        .hero-download-button img {
+            height: 100%;
+            width: auto;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+            text-transform: lowercase;
+        }
+
+        .btn-primary {
+            background: #e5d993;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: #d4c882;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e5d993;
+            border: 2px solid #e5d993;
+        }
+
+        .btn-secondary:hover {
+            background: #e5d993;
+            color: black;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0 100px;
+            background: #131c1d;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #e5d993;
+            text-transform: lowercase;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+            opacity: 0.7;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+
+        .feature-card {
+            background: #131c1d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feature-content {
+            padding: 2.5rem;
+            background: #131c1d;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #e5d993;
+            text-transform: lowercase;
+            line-height: 1.2;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            margin: 0 0 1.5rem 0;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .feature-learn-more {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #131c1d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: lowercase;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .feature-learn-more:hover {
+            background: #1a2526;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Learn More Section */
+        .learn-more {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #304243 0%, #3d5455 50%, #304243 100%);
+            background-size: 200% 200%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .learn-more::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(229, 217, 147, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(229, 217, 147, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .learn-more-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+
+        .learn-more-card {
+            background: #131c1d;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(229, 217, 147, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .learn-more-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(229, 217, 147, 0.3);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .learn-more-card h3 {
+            font-size: 1.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: #e5d993;
+            text-transform: lowercase;
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+        }
+
+        .learn-more-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: transparent;
+            color: #e5d993;
+            border: 2px solid #e5d993;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .learn-more-btn:hover {
+            background: #e5d993;
+            color: #131c1d;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .learn-more-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .learn-more-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .learn-more {
+                padding: 80px 0;
+            }
+        }
+
+        /* Training Preview Section */
+        .training-preview {
+            padding: 120px 0 100px;
+            background: #304243;
+            background-image: url('homepage background.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .training-layout {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            align-items: start;
+        }
+
+        .training-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .training-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #131c1d;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            position: relative;
+        }
+
+        .training-item:hover {
+            background: #1a2526;
+        }
+
+        .training-item.active {
+            border-left-color: #e5d993;
+            background: #1a2526;
+        }
+
+        .training-item-thumbnail {
+            width: 120px;
+            height: 80px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #1a2526;
+        }
+
+        .training-item-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .training-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .training-item-category {
+            font-size: 1rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .training-player {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .training-player-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #131c1d;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .training-player-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .training-player-container video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .training-player-container video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+
+        .training-player-container video::-webkit-media-controls-panel {
+            display: none !important;
+        }
+
+        @media (max-width: 1024px) {
+            .training-layout {
+                grid-template-columns: 320px 1fr;
+                gap: 2rem;
+            }
+
+            .training-item-thumbnail {
+                width: 100px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .training-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .training-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .training-item {
+                flex-direction: column;
+                text-align: center;
+                border-left: none;
+                border-top: 3px solid transparent;
+            }
+
+            .training-item.active {
+                border-left: none;
+                border-top-color: #e5d993;
+            }
+
+            .training-item-thumbnail {
+                width: 100%;
+                height: 120px;
+            }
+        }
+
+        /* Download Section */
+        .download {
+            padding: 80px 0;
+            background: #304243;
+            color: white;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-size: 2.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #e5d993;
+            text-transform: lowercase;
+        }
+
+        .download p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Download Hero */
+        .download-hero {
+            background: #131c1d;
+            color: white;
+            padding: 140px 0 120px;
+            overflow: hidden;
+        }
+
+        .download-hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .download-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .download-hero-phone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            overflow: visible;
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .download-hero-phone.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .download-hero-phone img {
+            max-width: 165%;
+            height: auto;
+            transform: rotate(-6deg);
+            filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .download-hero-phone:hover img {
+            transform: rotate(-6deg) scale(1.02);
+        }
+
+        .download-hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease-out 0.2s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+
+        .download-hero-content.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .download-badges {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out 0.4s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+        }
+
+        .download-badges.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(229, 217, 147, 0.1);
+            border: 1px solid rgba(229, 217, 147, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        .download-badge .stars {
+            color: #e5d993;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+        }
+
+        .download-badge .rating {
+            font-weight: 700;
+            color: #e5d993;
+        }
+
+        .download-hero-headline {
+            font-size: 4.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #e5d993;
+            text-transform: lowercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out 0.5s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+        }
+
+        .download-hero-headline.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-hero-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            max-width: 540px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out 0.7s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s;
+        }
+
+        .download-hero-text.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-platform-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out 0.9s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.9s;
+        }
+
+        .download-platform-buttons.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-platform {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: lowercase;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .btn-platform-primary {
+            background: #e5d993;
+            color: #131c1d;
+            box-shadow: 0 4px 12px rgba(229, 217, 147, 0.3);
+        }
+
+        .btn-platform-primary:hover {
+            background: #d4c882;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(229, 217, 147, 0.4);
+        }
+
+        .btn-platform-outline {
+            background: transparent;
+            color: #e5d993;
+            border-color: rgba(229, 217, 147, 0.4);
+        }
+
+        .btn-platform-outline:hover {
+            background: rgba(229, 217, 147, 0.1);
+            border-color: #e5d993;
+            transform: translateY(-2px);
+        }
+
+        .btn-platform-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background: #131c1d;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #e5d993;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #e5d993;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #e5d993;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3d5455;
+            padding-top: 2rem;
+            color: #bfbfbf;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-taglines {
+                font-size: 3.5rem;
+            }
+
+            .download-hero-container {
+                padding: 0 30px;
+            }
+
+            .download-hero-grid {
+                gap: 4rem;
+            }
+
+            .download-hero-headline {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #131c1d;
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 2px solid #e5d993;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            .hero-app-icon-box {
+                width: 100px;
+                height: 100px;
+                border-radius: 22px;
+            }
+
+            .hero-app-icon-box img {
+                width: 75%;
+                height: 75%;
+            }
+                padding: 0.5rem 0;
+                text-align: center;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-section {
+                min-height: 100vh;
+                padding: 120px 0 60px;
+            }
+
+            .hero-container {
+                padding: 0 20px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-app-logo img {
+                height: 60px;
+            }
+
+            .nav-links li {
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-taglines {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta-link {
+                font-size: 1rem;
+            }
+
+            .hero-download-button {
+                height: 40px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features {
+                padding: 80px 0 60px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 20px;
+                margin-top: 2rem;
+            }
+
+            .feature-image {
+                height: 250px;
+            }
+
+            .feature-content {
+                padding: 1.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .feature-learn-more {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+                padding: 0 20px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .step-number {
+                width: 80px;
+                height: 80px;
+                font-size: 1.6rem;
+            }
+
+            .step p {
+                max-width: 100%;
+            }
+
+            .download-hero {
+                padding: 140px 0 80px;
+            }
+
+            .download-hero-container {
+                padding: 0 20px;
+            }
+
+            .download-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .download-hero-phone {
+                order: 1;
+            }
+
+            .download-hero-phone img {
+                max-width: 280px;
+                transform: rotate(-4deg);
+            }
+
+            .download-hero-content {
+                order: 2;
+                align-items: center;
+                text-align: center;
+            }
+
+            .download-badges {
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .download-hero-headline {
+                font-size: 2.8rem;
+                text-align: center;
+                margin-bottom: 1.25rem;
+            }
+
+            .download-hero-text {
+                font-size: 1.1rem;
+                text-align: center;
+                margin-bottom: 2.5rem;
+                max-width: 100%;
+            }
+
+            .download-platform-buttons {
+                justify-content: center;
+            }
+
+            .download-hero-headline {
+                font-size: 2.2rem;
+            }
+
+            .download-hero-text {
+                font-size: 1rem;
+            }
+
+            .btn-platform {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .download-hero {
+                padding: 140px 0 60px;
+            }
+
+            .download-hero-container {
+                padding: 0 16px;
+            }
+
+            .download-hero-headline {
+                font-size: 1.9rem;
+            }
+
+            .download-hero-text {
+                font-size: 0.95rem;
+            }
+
+            .download-badges {
+                gap: 0.75rem;
+            }
+
+            .download-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .download-platform-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-platform {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+                
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">
+                <img src="logo.png" alt="TeamsFC" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="for-players.html">how it works</a></li>
+                <li><a href="downloads.html">download</a></li>
+                <li><a href="pricing.html">pricing</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">teams fc for players</h1>
+                <div class="hero-taglines">
+                    train smarter.<br>
+                    compete everywhere.
+                </div>
+                <p class="hero-description">The only app that combines real-world soccer training with competitive gaming. Complete challenges, earn collectible cards, build tactical decks, and compete on weekly leaderboards.</p>
+                <a href="downloads.html" class="hero-cta-link">download teams fc player app</a>
+                <div class="hero-download-buttons">
+                    <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" target="_blank" rel="noopener noreferrer" class="hero-download-button">
+                        <img src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Preview Section -->
+    <section id="training-preview" class="training-preview">
+        <div class="container">
+            <h2 class="section-title">4 Categories to Complete</h2>
+            <p class="section-subtitle">These videos are a preview of the 450+ challenges we have across Easy, Medium, and Hard mode within the app.</p>
+            <div class="training-layout">
+                <div class="training-list">
+                    <div class="training-item active" data-video-id="1">
+                        <div class="training-item-thumbnail">
+                            <img src="V turn into L turn.png" alt="V turn into L turn">
+                        </div>
+                        <div class="training-item-info">
+                            <span class="training-item-category">Footskills</span>
+                        </div>
+                    </div>
+                    <div class="training-item" data-video-id="2">
+                        <div class="training-item-thumbnail">
+                            <img src="V turn pass.png" alt="V turn pass">
+                        </div>
+                        <div class="training-item-info">
+                            <span class="training-item-category">First Touch</span>
+                        </div>
+                    </div>
+                    <div class="training-item" data-video-id="3">
+                        <div class="training-item-thumbnail">
+                            <img src="juggling.png" alt="Juggling">
+                        </div>
+                        <div class="training-item-info">
+                            <span class="training-item-category">Juggling</span>
+                        </div>
+                    </div>
+                    <div class="training-item" data-video-id="4">
+                        <div class="training-item-thumbnail">
+                            <img src="Hops.png" alt="Hops">
+                        </div>
+                        <div class="training-item-info">
+                            <span class="training-item-category">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="training-player">
+                    <div class="training-player-container">
+                        <video id="training-main-video" autoplay muted loop playsinline>
+                            <source src="V turn into L turn.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">why teams fc?</h2>
+            <p class="section-subtitle">The only app that bridges real-world training with competitive gaming</p>
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <img src="Every. TOUCH. COUNTS..svg" alt="AI Video Verification" class="feature-image">
+                    <div class="feature-content">
+                        <h3>ai video verification</h3>
+                        <p>Our proprietary AI/ML model verifies your training in real-time, ensuring authentic skill development.</p>
+                        <a href="for-players.html" class="feature-learn-more">learn more</a>
+                    </div>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <img src="leaderboards.jpg" alt="Weekly Leaderboards" class="feature-image">
+                    <div class="feature-content">
+                        <h3>weekly leaderboards</h3>
+                        <p>Compete globally based on your rep-to-time ratio. Climb the ranks and prove your skills.</p>
+                        <a href="for-players.html" class="feature-learn-more">learn more</a>
+                    </div>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <img src="collectible-cards.jpg" alt="Collectible Cards" class="feature-image">
+                    <div class="feature-content">
+                        <h3>collectible cards</h3>
+                        <p>Earn cards by completing challenges. Build powerful decks and compete in tactical matches.</p>
+                        <a href="for-players.html" class="feature-learn-more">learn more</a>
+                    </div>
+                </div>
+                <div class="feature-card fade-in-up">
+                    <img src="progression-system.jpg" alt="Progression System" class="feature-image">
+                    <div class="feature-content">
+                        <h3>progression system</h3>
+                        <p>Start at your level (Easy/Medium/Hard) and unlock challenges as you improve. Real progression, real rewards.</p>
+                        <a href="for-players.html" class="feature-learn-more">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>teams fc</h3>
+                    <p>The only app that combines real-world soccer training with competitive gaming.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>features</h3>
+                    <ul>
+                        <li><a href="#features">ai video verification</a></li>
+                        <li><a href="#features">collectible cards</a></li>
+                        <li><a href="#features">weekly leaderboards</a></li>
+                        <li><a href="#features">progression system</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>support</h3>
+                    <ul>
+                        <li><a href="contact.html">contact us</a></li>
+                        <li><a href="privacy-policy.html">privacy policy</a></li>
+                        <li><a href="terms-of-service.html">terms of service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>connect</h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/teamsfcapp/" target="_blank" rel="noopener noreferrer">instagram</a></li>
+                        <li><a href="https://x.com/teamsfcapp" target="_blank" rel="noopener noreferrer">x</a></li>
+                        <li><a href="https://www.tiktok.com/@teamsfcapp" target="_blank" rel="noopener noreferrer">tiktok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TEAMS FC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(19, 28, 29, 0.95)';
+            } else {
+                header.style.background = '#131c1d';
+            }
+        });
+
+        // Training Preview Video Functionality
+        const videoData = {
+            1: {
+                title: 'V turn into L turn',
+                category: 'Footskills',
+                videoUrl: 'V turn into L turn.mp4'
+            },
+            2: {
+                title: 'V turn pass',
+                category: 'First Touch',
+                videoUrl: 'V turn pass.mp4'
+            },
+            3: {
+                title: 'Juggling',
+                category: 'Juggling',
+                videoUrl: 'juggling.mp4'
+            },
+            4: {
+                title: 'Hops',
+                category: 'Fitness',
+                videoUrl: 'Hops.mp4'
+            }
+        };
+
+        const trainingItems = document.querySelectorAll('.training-item');
+        const mainVideo = document.getElementById('training-main-video');
+        const trainingList = document.querySelector('.training-list');
+        const videoContainer = document.querySelector('.training-player-container');
+
+        // Match video container height to category list height
+        function matchVideoHeight() {
+            if (trainingList && videoContainer) {
+                const listHeight = trainingList.offsetHeight;
+                videoContainer.style.height = listHeight + 'px';
+            }
+        }
+
+        // Match height on load and resize
+        matchVideoHeight();
+        window.addEventListener('resize', matchVideoHeight);
+
+        // Ensure video always loops and has no controls
+        mainVideo.loop = true;
+        mainVideo.controls = false;
+        
+        // Ensure video keeps looping even if interrupted
+        mainVideo.addEventListener('ended', () => {
+            mainVideo.currentTime = 0;
+            mainVideo.play().catch(e => {
+                console.log('Video play prevented:', e);
+            });
+        });
+
+        trainingItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const videoId = item.getAttribute('data-video-id');
+                const video = videoData[videoId];
+
+                if (video) {
+                    // Update active state
+                    trainingItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    // Update video source and ensure it loops
+                    mainVideo.src = encodeURI(video.videoUrl);
+                    mainVideo.loop = true;
+                    mainVideo.load();
+                    
+                    // Play the video (it will loop automatically)
+                    mainVideo.play().catch(e => {
+                        console.log('Video play prevented:', e);
+                    });
+                }
+            });
+        });
+
+        // Download Hero Section Scroll Animations
+        const downloadHeroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    const phone = section.querySelector('.download-hero-phone');
+                    const content = section.querySelector('.download-hero-content');
+                    const badges = section.querySelector('.download-badges');
+                    const headline = section.querySelector('.download-hero-headline');
+                    const text = section.querySelector('.download-hero-text');
+                    const buttons = section.querySelector('.download-platform-buttons');
+
+                    if (phone) phone.classList.add('animate-in');
+                    if (content) content.classList.add('animate-in');
+                    if (badges) badges.classList.add('animate-in');
+                    if (headline) headline.classList.add('animate-in');
+                    if (text) text.classList.add('animate-in');
+                    if (buttons) buttons.classList.add('animate-in');
+
+                    downloadHeroObserver.unobserve(section);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        const downloadHeroSection = document.querySelector('.download-hero');
+        if (downloadHeroSection) {
+            downloadHeroObserver.observe(downloadHeroSection);
+        }
+    </script>
+</body>
+</html> 

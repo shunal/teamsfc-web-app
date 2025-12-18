@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Players - TEAMS FC</title>
-    <meta name="description" content="Join TEAMS FC as a player. Train with your team coach or get personalized coaching from public coaches.">
+    <title>How It Works - TEAMS FC</title>
+    <meta name="description" content="Learn how TEAMS FC combines real-world soccer training with competitive gaming. Complete challenges, earn cards, build decks, and compete on leaderboards.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -125,11 +125,6 @@
             margin: 0 auto;
         }
 
-        /* Options Section */
-        .options-section {
-            padding: 80px 0;
-            background: #131c1d;
-        }
 
         .section-title {
             text-align: center;
@@ -242,72 +237,115 @@
             margin-bottom: 1rem;
         }
 
-        /* How it Works */
+        /* How It Works */
         .how-it-works {
-            padding: 80px 0 60px 0;
-            background: #304243;
+            padding: 200px 0 160px;
+            background: #131c1d;
         }
 
-        /* Section Divider */
-        .section-divider {
-            background: #304243;
-            padding: 20px 0;
-        }
-
-        .divider-line {
-            height: 1px;
-            background: #e5d993;
-            /* background: linear-gradient(90deg, transparent 0%, rgba(229, 217, 147, 0.3) 20%, rgba(229, 217, 147, 0.6) 50%, rgba(229, 217, 147, 0.3) 80%, transparent 100%); */
-            /* max-width: 400px; */
+        .how-it-works-content {
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .step-card {
-            background: #131c1d;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        .step-card:hover {
-            border-color: transparent;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #e5d993;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
+        .how-it-works-title {
+            font-size: 3.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            color: black;
-        }
-
-        .step-card h4 {
-            font-size: 1.3rem;
-            font-family: 'Arsenal SC', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
             color: #e5d993;
             text-transform: lowercase;
+            letter-spacing: -0.02em;
+            margin: 0 0 6rem 0;
         }
 
-        .step-card p {
-            color: white;
+        .how-it-works-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        .how-it-works-item {
+            display: flex;
+            flex-direction: column;
+            padding: 3rem 2.5rem;
+            background: rgba(229, 217, 147, 0.1);
+            border: 1px solid rgba(229, 217, 147, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .how-it-works-item:hover {
+            border-color: rgba(229, 217, 147, 0.4);
+            background: rgba(229, 217, 147, 0.15);
+        }
+
+        .item-number {
+            font-size: 0.875rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            color: #e5d993;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            text-align: center;
+        }
+
+        .item-label {
+            font-size: 1.3rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: lowercase;
+            letter-spacing: 0.01em;
+            line-height: 1.3;
+        }
+
+        .item-detail {
+            font-size: 0.95rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.01em;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 140px 0 100px;
+            }
+
+            .how-it-works-content {
+                padding: 0 20px;
+            }
+
+            .how-it-works-title {
+                font-size: 2.5rem;
+                margin-bottom: 4rem;
+            }
+
+            .how-it-works-list {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .how-it-works-item {
+                padding: 2.5rem 2rem;
+            }
+
+            .item-label {
+                font-size: 1.2rem;
+            }
+
+            .item-detail {
+                font-size: 0.9rem;
+            }
         }
 
         /* CTA Section */
@@ -443,9 +481,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         html {
@@ -461,9 +496,9 @@
                 <img src="logo.png" alt="TeamsFC" class="logo-img">
             </a>
             <ul class="nav-links">
-                <li><a href="for-players.html">for players</a></li>
-                <li><a href="coaching.html">for coaches</a></li>
+                <li><a href="for-players.html">how it works</a></li>
                 <li><a href="downloads.html">download</a></li>
+                <li><a href="pricing.html">pricing</a></li>
                 <li><a href="contact.html">contact</a></li>
             </ul>
             <div class="mobile-menu">
@@ -477,102 +512,51 @@
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">how training works</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h4>get assigned</h4>
-                    <p>Your coach assigns you a specific training exercise or challenge from the library</p>
+            <div class="how-it-works-content">
+                <h2 class="how-it-works-title">how it works</h2>
+                <div class="how-it-works-list">
+                    <div class="how-it-works-item">
+                        <div class="item-number">01</div>
+                        <div class="item-content">
+                            <div class="item-label">choose level</div>
+                            <div class="item-detail">Easy, Medium, or Hard. Each level has different rep requirements and time limits.</div>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h4>record & submit</h4>
-                    <p>Complete the exercise and record a 30-second video directly in the app</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h4>receive feedback</h4>
-                    <p>Your coach reviews your submission and provides detailed, personalized feedback</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h4>master techniques</h4>
-                    <p>Use your coach's feedback to perfect each skill before moving forward</p>
+                    <div class="how-it-works-item">
+                        <div class="item-number">02</div>
+                        <div class="item-content">
+                            <div class="item-label">complete challenges</div>
+                            <div class="item-detail">Complete required reps within 20 seconds. Advanced AI verifies rep count and analyzes movement patterns to ensure proper execution and prevent cheating.</div>
                 </div>
             </div>
+                    <div class="how-it-works-item">
+                        <div class="item-number">03</div>
+                        <div class="item-content">
+                            <div class="item-label">earn cards</div>
+                            <div class="item-detail">Each completed challenge earns collectible cards. Build your collection as you progress through different categories.</div>
         </div>
-    </section>
-
-    <!-- Section Divider -->
-
-    <!-- Options Section -->
-    <section class="options-section">
-        <div class="container">
-            <h2 class="section-title">two ways to get started</h2>
-            <p class="section-subtitle">Select the option that best fits your situation</p>
-            
-            <div class="options-grid">
-                <!-- Option 1: Team Coach -->
-                <div class="option-card">
-                    <div class="badge">option 1</div>
-                    <h3>join your team</h3>
-                    <p>If your coach uses TEAMS FC, you can join your team using your unique team code.</p>
-                    
-                    <h4>how to join</h4>
-                    <p>Get your team's unique code from your coach and enter it during registration. It's that simple!</p>
-                    
-                    <h4>free team management features</h4>
-                    <ul>
-                        <li><strong>Team Chat</strong> - Communicate with your coach and teammates</li>
-                        <li><strong>Schedule Access</strong> - Never miss a game or practice</li>
-                        <li><strong>Team Updates</strong> - Stay informed about everything team-related</li>
-                    </ul>
-                    
-                    <h4>upgrade to training</h4>
-                    <p>If your coach offers training through the app, you can subscribe to unlock:</p>
-                    
-                    <ul>
-                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
-                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
-                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
-                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
-                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
-                    </ul>
-                    
-                    <h4>payment details</h4>
-                    <p>Your coach sets the subscription rate. Payment is handled monthly through the app.</p>
+        </div>
+                    <div class="how-it-works-item">
+                        <div class="item-number">04</div>
+                        <div class="item-content">
+                            <div class="item-label">unlock progression</div>
+                            <div class="item-detail">Pass challenges to unlock the next level. Progress through categories systematically.</div>
                 </div>
-
-                <!-- Option 2: Public Coach -->
-                <div class="option-card">
-                    <div class="badge">option 2</div>
-                    <h3>personal training</h3>
-                    <p>Don't have a team using TEAMS FC? Subscribe to a public coach for personalized one-on-one training.</p>
-                    
-                    <h4>what you get</h4>
-                    <p>All the same powerful training features without the team element:</p>
-                    
-                    <ul>
-                        <li><strong>170+ Training Exercises</strong> - Complete soccer-specific challenges</li>
-                        <li><strong>Personalized Assignments</strong> - Your coach assigns tailored training</li>
-                        <li><strong>Video Submissions</strong> - Record 30-second clips in the app</li>
-                        <li><strong>Expert Feedback</strong> - Get detailed reviews from your coach</li>
-                        <li><strong>Progress Tracking</strong> - Watch your skills improve over time</li>
-                    </ul>
-                    
-                    <h4>verified expertise</h4>
-                    <p>Public coaches have completed 50+ reviews and are verified experts</p>
-                    
-                    <h4>perfect for</h4>
-                    <ul>
-                        <li>Players whose teams don't use TEAMS FC</li>
-                        <li>Individual players seeking extra training</li>
-                        <li>Anyone wanting personalized coaching</li>
-                        <li>Players looking to improve specific skills</li>
-                    </ul>
-                    
-                    <h4>how to choose</h4>
-                    <p>Browse available public coaches in the app and choose based on their expertise, ratings, and pricing.</p>
+            </div>
+                    <div class="how-it-works-item">
+                        <div class="item-number">05</div>
+                        <div class="item-content">
+                            <div class="item-label">build decks</div>
+                            <div class="item-detail">Use collected cards to build tactical decks. Compete in matches where your training directly impacts performance.</div>
+        </div>
+                </div>
+                    <div class="how-it-works-item">
+                        <div class="item-number">06</div>
+                        <div class="item-content">
+                            <div class="item-label">compete weekly</div>
+                            <div class="item-detail">Ranked by rep-to-time ratio on global leaderboards. Resets weekly.</div>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -581,8 +565,8 @@
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>ready to start training?</h2>
-            <p>Download the TEAMS FC app and begin your journey to soccer excellence</p>
+            <h2>ready to train and play?</h2>
+            <p>Download the TEAMS FC app and start your journey. Train in the real world, play in the game.</p>
             <a href="downloads.html" class="btn">download app</a>
         </div>
     </section>
@@ -592,16 +576,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>teamsfc</h3>
-                    <p>Empowering soccer players to reach their full potential through technology and expert coaching.</p>
+                    <h3>teams fc</h3>
+                    <p>The only app that combines real-world soccer training with competitive gaming.</p>
                 </div>
                 <div class="footer-section">
                     <h3>features</h3>
                     <ul>
-                        <li><a href="index.html#features">personalized training</a></li>
-                        <li><a href="index.html#features">video evaluations</a></li>
-                        <li><a href="index.html#features">progress tracking</a></li>
-                        <li><a href="index.html#features">skill challenges</a></li>
+                        <li><a href="index.html#features">ai video verification</a></li>
+                        <li><a href="index.html#features">collectible cards</a></li>
+                        <li><a href="index.html#features">weekly leaderboards</a></li>
+                        <li><a href="index.html#features">progression system</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
