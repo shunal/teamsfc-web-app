@@ -239,81 +239,181 @@
 
         /* How It Works */
         .how-it-works {
-            padding: 200px 0 160px;
+            padding: 200px 0 180px;
             background: #131c1d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(229, 217, 147, 0.03) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .how-it-works-content {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .how-it-works-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            color: #e5d993;
+            color: #ffffff;
             text-transform: lowercase;
-            letter-spacing: -0.02em;
-            margin: 0 0 6rem 0;
+            letter-spacing: -0.03em;
+            margin: 0 0 1rem 0;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .how-it-works-subtitle {
+            font-size: 1.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin: 0 0 5rem 0;
+            letter-spacing: 0.01em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .how-it-works-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             position: relative;
         }
 
         .how-it-works-item {
             display: flex;
-            flex-direction: column;
-            padding: 3rem 2.5rem;
-            background: rgba(229, 217, 147, 0.1);
-            border: 1px solid rgba(229, 217, 147, 0.2);
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            align-items: flex-start;
+            gap: 3rem;
+            padding: 3.5rem 0;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        .how-it-works-item:hover {
-            border-color: rgba(229, 217, 147, 0.4);
-            background: rgba(229, 217, 147, 0.15);
+        .how-it-works-item:nth-child(1) { animation-delay: 0.1s; }
+        .how-it-works-item:nth-child(2) { animation-delay: 0.2s; }
+        .how-it-works-item:nth-child(3) { animation-delay: 0.3s; }
+        .how-it-works-item:nth-child(4) { animation-delay: 0.4s; }
+        .how-it-works-item:nth-child(5) { animation-delay: 0.5s; }
+        .how-it-works-item:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .how-it-works-item::before {
+            content: '';
+            position: absolute;
+            left: 4.5rem;
+            top: 7rem;
+            bottom: -3.5rem;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+            z-index: 0;
+        }
+
+        .how-it-works-item:last-child::before {
+            display: none;
+        }
+
+        .item-number-wrapper {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
         }
 
         .item-number {
-            font-size: 0.875rem;
+            width: 9rem;
+            height: 9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 3px solid #e5d993;
+            border-radius: 50%;
+            font-size: 2.5rem;
             font-family: 'Arsenal SC', sans-serif;
-            font-weight: 400;
-            color: #e5d993;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            text-align: center;
+            font-weight: 700;
+            color: #6b7280;
+            letter-spacing: -0.02em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+
+        .item-number::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e5d993, rgba(229, 217, 147, 0.6));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+            filter: blur(8px);
+        }
+
+        .how-it-works-item:hover .item-number {
+            transform: scale(1.05);
+            border-color: #e5d993;
+            box-shadow: 0 8px 40px rgba(229, 217, 147, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+        }
+
+        .how-it-works-item:hover .item-number::before {
+            opacity: 0.6;
         }
 
         .item-content {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            text-align: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .item-label {
-            font-size: 1.3rem;
+            font-size: 1.75rem;
             font-family: 'Arsenal SC', sans-serif;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            color: #ffffff;
             text-transform: lowercase;
-            letter-spacing: 0.01em;
+            letter-spacing: -0.01em;
             line-height: 1.3;
+            margin: 0;
         }
 
         .item-detail {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.75);
             letter-spacing: 0.01em;
-            line-height: 1.7;
+            line-height: 1.8;
+            margin: 0;
         }
 
         @media (max-width: 768px) {
@@ -325,68 +425,154 @@
                 padding: 0 20px;
             }
 
-            .how-it-works-title {
-                font-size: 2.5rem;
-                margin-bottom: 4rem;
-            }
-
-            .how-it-works-list {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .how-it-works-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: 3.5rem;
             }
 
             .how-it-works-item {
-                padding: 2.5rem 2rem;
+                gap: 2rem;
+                padding: 2.5rem 0;
+            }
+
+            .how-it-works-item::before {
+                left: 3.5rem;
+                top: 5.5rem;
+            }
+
+            .item-number {
+                width: 7rem;
+                height: 7rem;
+                font-size: 2rem;
+            }
+
+            .item-content {
+                padding-top: 1rem;
             }
 
             .item-label {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
 
             .item-detail {
-                font-size: 0.9rem;
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .how-it-works-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .how-it-works-item::before {
+                display: none;
+            }
+
+            .item-number {
+                width: 6rem;
+                height: 6rem;
+                font-size: 1.75rem;
+            }
+
+            .item-content {
+                padding-top: 0;
             }
         }
 
         /* CTA Section */
         .cta-section {
-            padding: 80px 0;
+            padding: 120px 0;
             background: #304243;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(229, 217, 147, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
         }
 
         .cta-section h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #e5d993;
+            color: #ffffff;
             text-transform: lowercase;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
         .btn {
-            padding: 15px 40px;
-            border-radius: 10px;
+            padding: 18px 48px;
+            border-radius: 12px;
             text-decoration: none;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
             text-transform: lowercase;
             background: #e5d993;
-            color: black;
-            font-size: 1.1rem;
+            color: #131c1d;
+            font-size: 1.15rem;
+            letter-spacing: 0.01em;
+            box-shadow: 0 4px 20px rgba(229, 217, 147, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn:hover {
-            background: #d4c882;
-            transform: translateY(-2px);
+            background: #f0e5a8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(229, 217, 147, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
         }
 
         /* Footer */
@@ -481,6 +667,23 @@
                 grid-template-columns: 1fr;
             }
 
+            .cta-section {
+                padding: 80px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 2.25rem;
+            }
+
+            .cta-section p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 16px 40px;
+                font-size: 1.05rem;
+            }
+
         }
 
         html {
@@ -509,54 +712,74 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="player-hero">
+        <div class="container">
+            <h1>how it works</h1>
+            <p>Transform your real-world training into competitive gameplay. Master challenges, collect cards, and dominate the leaderboards.</p>
+        </div>
+    </section>
+
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
             <div class="how-it-works-content">
-                <h2 class="how-it-works-title">how it works</h2>
+                <p class="how-it-works-subtitle">A seamless journey from training to competition</p>
                 <div class="how-it-works-list">
                     <div class="how-it-works-item">
-                        <div class="item-number">01</div>
+                        <div class="item-number-wrapper">
+                            <div class="item-number">01</div>
+                        </div>
                         <div class="item-content">
-                            <div class="item-label">choose level</div>
-                            <div class="item-detail">Easy, Medium, or Hard. Each level has different rep requirements and time limits.</div>
-                </div>
-                </div>
+                            <h3 class="item-label">choose level</h3>
+                            <p class="item-detail">Easy, Medium, or Hard. Each level has different rep requirements and time limits.</p>
+                        </div>
+                    </div>
                     <div class="how-it-works-item">
-                        <div class="item-number">02</div>
+                        <div class="item-number-wrapper">
+                            <div class="item-number">02</div>
+                        </div>
                         <div class="item-content">
-                            <div class="item-label">complete challenges</div>
-                            <div class="item-detail">Complete required reps within 20 seconds. Advanced AI verifies rep count and analyzes movement patterns to ensure proper execution and prevent cheating.</div>
-                </div>
-            </div>
+                            <h3 class="item-label">complete challenges</h3>
+                            <p class="item-detail">Complete required reps within 20 seconds. Advanced AI verifies rep count and analyzes movement patterns to ensure proper execution and prevent cheating.</p>
+                        </div>
+                    </div>
                     <div class="how-it-works-item">
-                        <div class="item-number">03</div>
+                        <div class="item-number-wrapper">
+                            <div class="item-number">03</div>
+                        </div>
                         <div class="item-content">
-                            <div class="item-label">earn cards</div>
-                            <div class="item-detail">Each completed challenge earns collectible cards. Build your collection as you progress through different categories.</div>
-        </div>
-        </div>
+                            <h3 class="item-label">earn cards</h3>
+                            <p class="item-detail">Each completed challenge earns collectible cards. Build your collection as you progress through different categories.</p>
+                        </div>
+                    </div>
                     <div class="how-it-works-item">
-                        <div class="item-number">04</div>
+                        <div class="item-number-wrapper">
+                            <div class="item-number">04</div>
+                        </div>
                         <div class="item-content">
-                            <div class="item-label">unlock progression</div>
-                            <div class="item-detail">Pass challenges to unlock the next level. Progress through categories systematically.</div>
-                </div>
-            </div>
+                            <h3 class="item-label">unlock progression</h3>
+                            <p class="item-detail">Pass challenges to unlock the next level. Progress through categories systematically.</p>
+                        </div>
+                    </div>
                     <div class="how-it-works-item">
-                        <div class="item-number">05</div>
+                        <div class="item-number-wrapper">
+                            <div class="item-number">05</div>
+                        </div>
                         <div class="item-content">
-                            <div class="item-label">build decks</div>
-                            <div class="item-detail">Use collected cards to build tactical decks. Compete in matches where your training directly impacts performance.</div>
-        </div>
-                </div>
+                            <h3 class="item-label">build decks</h3>
+                            <p class="item-detail">Use collected cards to build tactical decks. Compete in matches where your training directly impacts performance.</p>
+                        </div>
+                    </div>
                     <div class="how-it-works-item">
-                        <div class="item-number">06</div>
+                        <div class="item-number-wrapper">
+                            <div class="item-number">06</div>
+                        </div>
                         <div class="item-content">
-                            <div class="item-label">compete weekly</div>
-                            <div class="item-detail">Ranked by rep-to-time ratio on global leaderboards. Resets weekly.</div>
-                </div>
-                </div>
+                            <h3 class="item-label">compete weekly</h3>
+                            <p class="item-detail">Ranked by rep-to-time ratio on global leaderboards. Resets weekly.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -314,6 +314,12 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
+        .feature-image-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background: #1a2526;
+        }
+
         .feature-image {
             width: 100%;
             height: 400px;
@@ -933,6 +939,19 @@
             .download-hero-headline {
                 font-size: 3.5rem;
             }
+
+            .features-grid {
+                gap: 3rem;
+                padding: 0 30px;
+            }
+
+            .feature-image {
+                height: 320px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -951,16 +970,6 @@
 
             .nav-links.active {
                 display: flex;
-            .hero-app-icon-box {
-                width: 100px;
-                height: 100px;
-                border-radius: 22px;
-            }
-
-            .hero-app-icon-box img {
-                width: 75%;
-                height: 75%;
-            }
                 padding: 0.5rem 0;
                 text-align: center;
             }
@@ -986,8 +995,6 @@
                 height: 60px;
             }
 
-            .nav-links li {
-
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -1010,6 +1017,7 @@
 
             .section-title {
                 font-size: 2rem;
+                padding: 0 20px;
             }
 
             .features {
@@ -1023,8 +1031,18 @@
                 margin-top: 2rem;
             }
 
+            .feature-card {
+                margin: 0;
+            }
+
+            .feature-image-wrapper {
+                width: 100%;
+                overflow: hidden;
+            }
+
             .feature-image {
                 height: 250px;
+                width: 100%;
             }
 
             .feature-content {
@@ -1033,16 +1051,20 @@
 
             .feature-card h3 {
                 font-size: 1.3rem;
+                margin-bottom: 0.75rem;
             }
 
             .feature-card p {
                 font-size: 0.95rem;
                 line-height: 1.6;
+                margin-bottom: 1.25rem;
             }
 
             .feature-learn-more {
                 padding: 10px 20px;
                 font-size: 0.9rem;
+                width: 100%;
+                text-align: center;
             }
 
             .section-subtitle {
@@ -1164,6 +1186,48 @@
             .btn-platform {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .features {
+                padding: 60px 0 40px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                padding: 0 16px;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+                padding: 0 16px;
+                margin-bottom: 2rem;
+            }
+
+            .features-grid {
+                padding: 0 16px;
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .feature-image {
+                height: 200px;
+            }
+
+            .feature-content {
+                padding: 1.25rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            .feature-learn-more {
+                padding: 8px 16px;
+                font-size: 0.85rem;
             }
         }
 
@@ -1298,7 +1362,7 @@
             <p class="section-subtitle">The only app that bridges real-world training with competitive gaming</p>
             <div class="features-grid">
                 <div class="feature-card fade-in-up">
-                    <img src="Every. TOUCH. COUNTS..svg" alt="AI Video Verification" class="feature-image">
+                    <div class="feature-image-wrapper"><img src="Every. TOUCH. COUNTS..svg" alt="AI Video Verification" class="feature-image"></div>
                     <div class="feature-content">
                         <h3>ai video verification</h3>
                         <p>Our proprietary AI/ML model verifies your training in real-time, ensuring authentic skill development.</p>
@@ -1306,7 +1370,7 @@
                     </div>
                 </div>
                 <div class="feature-card fade-in-up">
-                    <img src="leaderboards.jpg" alt="Weekly Leaderboards" class="feature-image">
+                    <div class="feature-image-wrapper"><img src="leaderboards.jpg" alt="Weekly Leaderboards" class="feature-image"></div>
                     <div class="feature-content">
                         <h3>weekly leaderboards</h3>
                         <p>Compete globally based on your rep-to-time ratio. Climb the ranks and prove your skills.</p>
@@ -1314,7 +1378,7 @@
                     </div>
                 </div>
                 <div class="feature-card fade-in-up">
-                    <img src="collectible-cards.jpg" alt="Collectible Cards" class="feature-image">
+                    <div class="feature-image-wrapper"><img src="collectible-cards.jpg" alt="Collectible Cards" class="feature-image"></div>
                     <div class="feature-content">
                         <h3>collectible cards</h3>
                         <p>Earn cards by completing challenges. Build powerful decks and compete in tactical matches.</p>
@@ -1322,7 +1386,7 @@
                     </div>
                 </div>
                 <div class="feature-card fade-in-up">
-                    <img src="progression.svg" alt="Progression System" class="feature-image">
+                    <div class="feature-image-wrapper"><img src="progression.svg" alt="Progression System" class="feature-image"></div>
                     <div class="feature-content">
                         <h3>progression system</h3>
                         <p>Start at your level (Easy/Medium/Hard) and unlock challenges as you improve. Real progression, real rewards.</p>
@@ -1333,32 +1397,10 @@
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>teams fc</h3>
-                    <p>The only app that combines real-world soccer training with competitive gaming.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>features</h3>
-                    <ul>
-                        <li><a href="#features">ai video verification</a></li>
-                        <li><a href="#features">collectible cards</a></li>
-                        <li><a href="#features">weekly leaderboards</a></li>
-                        <li><a href="#features">progression system</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>support</h3>
-                    <ul>
-                        <li><a href="contact.html">contact us</a></li>
-                        <li><a href="privacy-policy.html">privacy policy</a></li>
-                        <li><a href="terms-of-service.html">terms of service</a></li>
-                    </ul>
-                </div>
                 <div class="footer-section">
                     <h3>connect</h3>
                     <ul>
