@@ -7,9 +7,7 @@
     <meta name="description" content="The only app that combines real-world soccer training with competitive gaming. Complete challenges, earn cards, build decks, and compete on leaderboards.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="/Untitled design copy.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -162,14 +160,33 @@
         }
 
         .hero-taglines {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-main-headline {
             font-size: 4.5rem;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
             color: white;
             text-transform: lowercase;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
+        }
+
+        .hero-subheadline {
+            font-size: 1.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: lowercase;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-taglines .mobile-text,
+        .hero-description .mobile-text {
+            display: none;
         }
 
         .hero-description {
@@ -924,8 +941,12 @@
                 font-size: 3.5rem;
             }
 
-            .hero-taglines {
+            .hero-main-headline {
                 font-size: 3.5rem;
+            }
+
+            .hero-subheadline {
+                font-size: 1.3rem;
             }
 
             .download-hero-container {
@@ -999,12 +1020,36 @@
                 font-size: 2.5rem;
             }
 
-            .hero-taglines {
+            .hero-main-headline {
                 font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-subheadline {
+                font-size: 1.1rem;
+            }
+
+            .hero-taglines .desktop-text {
+                display: none;
+            }
+
+            .hero-taglines .mobile-text {
+                display: block;
             }
 
             .hero-description {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+                max-width: 100%;
+            }
+
+            .hero-description .desktop-text {
+                display: none;
+            }
+
+            .hero-description .mobile-text {
+                display: block;
             }
 
             .hero-cta-link {
@@ -1286,12 +1331,20 @@
     <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content fade-in-up">
-                <h1 class="hero-title">teams fc for players</h1>
                 <div class="hero-taglines">
-                    train smarter.<br>
-                    compete everywhere.
+                    <h1 class="hero-main-headline">
+                        <span class="desktop-text">train smarter.</span>
+                        <span class="mobile-text">train smarter.</span>
+                    </h1>
+                    <p class="hero-subheadline">
+                        <span class="desktop-text">built by pro coaches for players.</span>
+                        <span class="mobile-text">built by pro coaches for players.</span>
+                    </p>
                 </div>
-                <p class="hero-description">The only app that combines real-world soccer training with competitive gaming. Complete challenges, earn collectible cards, build tactical decks, and compete on weekly leaderboards.</p>
+                <p class="hero-description">
+                    <span class="desktop-text">Progression-based soccer training that improves your skills, challenge by challenge. Complete challenges, unlock rewards, and transform your game.  </span>
+                    <span class="mobile-text">Progression-based soccer training that improves your skills, challenge by challenge. Complete challenges, unlock rewards, and transform your game.</span>
+                </p>
                 <a href="downloads.html" class="hero-cta-link">download teams fc player app</a>
                 <div class="hero-download-buttons">
                     <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" target="_blank" rel="noopener noreferrer" class="hero-download-button">
@@ -1378,7 +1431,7 @@
                     </div>
                 </div>
                 <div class="feature-card fade-in-up">
-                    <div class="feature-image-wrapper"><img src="collectible-cards.jpg" alt="Collectible Cards" class="feature-image"></div>
+                    <div class="feature-image-wrapper"><img src="collectible.svg" alt="Collectible Cards" class="feature-image"></div>
                     <div class="feature-content">
                         <h3>collectible cards</h3>
                         <p>Earn cards by completing challenges. Build powerful decks and compete in tactical matches.</p>

@@ -7,9 +7,7 @@
     <meta name="description" content="Download the TEAMS FC app for iOS and Android. Train in the real world, play in the game.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="/Untitled design copy.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +103,7 @@
         .download-hero {
             background: #131c1d;
             color: white;
-            padding: 140px 0 120px;
+            padding: 160px 0 140px;
             overflow: hidden;
         }
 
@@ -118,21 +116,44 @@
         .download-hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            gap: 4rem;
             align-items: center;
+        }
+
+        .download-cta-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .download-cta-mobile {
+            display: none;
+        }
+
+        .download-cta-heading {
+            font-size: 2.5rem;
+            font-family: 'Arsenal SC', sans-serif;
+            font-weight: 700;
+            color: #e5d993;
+            text-transform: lowercase;
+            text-align: center;
+            margin: 0 0 1.5rem 0;
+            letter-spacing: -0.02em;
         }
 
         .download-hero-phone {
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            z-index: 1;
             overflow: visible;
+            width: 100%;
+            position: relative;
         }
 
         .download-hero-phone img {
-            max-width: 165%;
+            max-width: 185%;
             height: auto;
             transform: rotate(-6deg);
             filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
@@ -148,8 +169,16 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            justify-content: center;
             position: relative;
             z-index: 10;
+            padding-left: 2rem;
+        }
+
+        .download-hero-content .download-cta-section {
+            align-items: center;
+            width: 100%;
+            max-width: 540px;
         }
 
         .download-badges {
@@ -199,28 +228,34 @@
             font-size: 1.2rem;
             line-height: 1.7;
             color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 3rem;
+            margin-bottom: 0;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 400;
             max-width: 540px;
+        }
+
+        .download-hero-text .mobile-text {
+            display: none;
         }
 
         .download-platform-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-platform {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 14px 28px;
+            padding: 16px 32px;
             border-radius: 30px;
             text-decoration: none;
             font-family: 'Arsenal SC', sans-serif;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-transform: lowercase;
             transition: all 0.3s ease;
             border: 2px solid transparent;
@@ -255,8 +290,8 @@
         }
 
         .btn-platform-icon {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             display: inline-block;
         }
 
@@ -319,11 +354,27 @@
             }
 
             .download-hero-grid {
-                gap: 4rem;
+                gap: 3rem;
             }
 
             .download-hero-headline {
                 font-size: 3.5rem;
+            }
+
+            .download-cta-heading {
+                font-size: 2.2rem;
+            }
+
+            .download-cta-section {
+                margin-top: 2.5rem;
+            }
+
+            .download-hero-phone img {
+                max-width: 150%;
+            }
+
+            .download-hero-content {
+                padding-left: 1rem;
             }
         }
 
@@ -367,19 +418,41 @@
                 gap: 3rem;
             }
 
-            .download-hero-phone {
+            .download-cta-desktop {
+                display: none;
+            }
+
+            .download-cta-mobile {
+                display: flex;
                 order: 1;
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+
+            .download-hero-phone {
+                order: 2;
+                display: flex;
+                justify-content: center;
             }
 
             .download-hero-phone img {
-                max-width: 280px;
+                /* max-width: 280px; */
                 transform: rotate(-4deg);
             }
 
             .download-hero-content {
-                order: 2;
+                order: 3;
                 align-items: center;
                 text-align: center;
+                padding-left: 0;
+            }
+
+            .download-hero-content .download-cta-section {
+                max-width: 100%;
+            }
+
+            .download-cta-heading {
+                font-size: 2rem;
             }
 
             .download-badges {
@@ -398,6 +471,14 @@
                 text-align: center;
                 margin-bottom: 2.5rem;
                 max-width: 100%;
+            }
+
+            .download-hero-text .desktop-text {
+                display: none;
+            }
+
+            .download-hero-text .mobile-text {
+                display: block;
             }
 
             .download-platform-buttons {
@@ -453,10 +534,164 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .download-cta-heading {
+                font-size: 1.75rem;
+            }
+
+            .download-cta-section {
+                margin-top: 1.5rem;
+            }
+
+            .download-hero-phone img {
+                max-width: 240px;
+            }
         }
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Animations - Material Design inspired */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUpSubtle {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Initial state - elements hidden */
+        .download-hero-phone {
+            opacity: 0;
+        }
+
+        .download-hero-content {
+            opacity: 0;
+        }
+
+        .download-cta-section {
+            opacity: 0;
+        }
+
+        .download-badges {
+            opacity: 0;
+        }
+
+        .download-hero-headline {
+            opacity: 0;
+        }
+
+        .download-hero-text {
+            opacity: 0;
+        }
+
+        /* Desktop animations - Clean and professional */
+        .download-hero-phone.animate-in {
+            animation: fadeInScale 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+
+        .download-hero-content.animate-in {
+            animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.1s forwards;
+        }
+
+        .download-badges.animate-in {
+            animation: fadeIn 0.4s cubic-bezier(0.4, 0.0, 0.2, 1) 0.15s forwards;
+        }
+
+        .download-hero-headline.animate-in {
+            animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s forwards;
+        }
+
+        .download-hero-text.animate-in {
+            animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s forwards;
+        }
+
+        .download-cta-section.animate-in {
+            animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.4s forwards;
+        }
+
+        .download-cta-mobile.animate-in {
+            animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.1s forwards;
+        }
+
+        /* Mobile-specific animations - Same clean style as desktop */
+        @media (max-width: 768px) {
+            /* Reset initial states for mobile - keep hidden for animation */
+            .download-hero-content {
+                opacity: 0;
+            }
+
+            .download-badges {
+                opacity: 0;
+            }
+
+            .download-hero-headline {
+                opacity: 0;
+            }
+
+            .download-hero-text {
+                opacity: 0;
+            }
+
+            /* Use same clean animations as desktop */
+            .download-hero-phone.animate-in {
+                animation: fadeInScale 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s forwards;
+            }
+
+            .download-hero-content.animate-in {
+                animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s forwards;
+            }
+
+            .download-badges.animate-in {
+                animation: fadeIn 0.4s cubic-bezier(0.4, 0.0, 0.2, 1) 0.35s forwards;
+            }
+
+            .download-hero-headline.animate-in {
+                animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.4s forwards;
+            }
+
+            .download-hero-text.animate-in {
+                animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.5s forwards;
+            }
+
+            .download-cta-mobile.animate-in {
+                animation: fadeInUpSubtle 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) 0.1s forwards;
+            }
         }
     </style>
 </head>
@@ -500,19 +735,30 @@
                         </div>
                     </div>
                     <h1 class="download-hero-headline">train smarter. compete everywhere.</h1>
-                    <p class="download-hero-text">The only app that combines real-world soccer training with competitive gaming. Complete challenges, earn collectible cards, build tactical decks, and compete on weekly leaderboards.</p>
+                    <p class="download-hero-text">
+                        <span class="desktop-text">Progression-based soccer training that improves your skills, challenge by challenge. Complete challenges, unlock rewards, and transform your game.</span>
+                        <span class="mobile-text">Progression-based soccer training that improves your skills, challenge by challenge. Complete challenges, unlock rewards, and transform your game.</span>
+                    </p>
+                    <div class="download-cta-section download-cta-desktop">
+                        <h2 class="download-cta-heading">download now</h2>
+                        <div class="download-platform-buttons">
+                            <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" target="_blank" rel="noopener noreferrer" class="btn-platform btn-platform-primary">
+                                <svg class="btn-platform-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                                </svg>
+                                iOS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="download-cta-section download-cta-mobile">
+                    <h2 class="download-cta-heading">download now</h2>
                     <div class="download-platform-buttons">
                         <a href="https://apps.apple.com/us/app/teamsfc/id6752795018" target="_blank" rel="noopener noreferrer" class="btn-platform btn-platform-primary">
                             <svg class="btn-platform-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
                             </svg>
                             iOS
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.teamsfc.app" target="_blank" rel="noopener noreferrer" class="btn-platform btn-platform-outline">
-                            <svg class="btn-platform-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5508 0 .9993.4486.9993.9993.0001.5511-.4485.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5508 0 .9993.4486.9993.9993 0 .5511-.4485.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1349 1.0957L4.8429 5.4434a.4161.4161 0 00-.5676-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.186.8535 13.3937.8535 16.3052c0 .4142.3358.75.75.75h20.793c.4142 0 .75-.3358.75-.75 0-2.9115-1.8354-5.1183-4.3895-5.9838"/>
-                            </svg>
-                            Android
                         </a>
                     </div>
                 </div>
@@ -568,6 +814,38 @@
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+
+        // Page load animations
+        function triggerAnimations() {
+            // Trigger animations for all elements
+            const phone = document.querySelector('.download-hero-phone');
+            const content = document.querySelector('.download-hero-content');
+            const badges = document.querySelector('.download-badges');
+            const headline = document.querySelector('.download-hero-headline');
+            const text = document.querySelector('.download-hero-text');
+            const ctaDesktop = document.querySelector('.download-cta-desktop');
+            const ctaMobile = document.querySelector('.download-cta-mobile');
+
+            // Add animate-in class to trigger animations
+            if (phone) phone.classList.add('animate-in');
+            if (content) content.classList.add('animate-in');
+            if (badges) badges.classList.add('animate-in');
+            if (headline) headline.classList.add('animate-in');
+            if (text) text.classList.add('animate-in');
+            if (ctaDesktop) ctaDesktop.classList.add('animate-in');
+            if (ctaMobile) ctaMobile.classList.add('animate-in');
+        }
+
+        // Try multiple methods to ensure animations trigger
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', triggerAnimations);
+        } else {
+            // DOM is already ready
+            triggerAnimations();
+        }
+
+        // Fallback: trigger after a short delay to ensure everything is loaded
+        setTimeout(triggerAnimations, 100);
     </script>
 </body>
 </html>
