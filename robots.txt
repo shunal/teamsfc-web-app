@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /test-deep-link.html
+Disallow: /verification-complete.html
+Disallow: /connect-success.html
+Disallow: /payment-cancel.html
+Disallow: /payment-success.html
+Disallow: /reset-password.html
+Disallow: /signup.html
+Disallow: /login.html
+Disallow: /invite.html
+
+# Sitemap
+Sitemap: https://teamsfc.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
